@@ -13,11 +13,11 @@ export const en: Dict = {
     more: 'Learn more', contact: 'Contact us', catalog: 'Request catalog', b2b: 'B2B inquiry',
     viewProducts: 'Explore ERMÁK products', viewMaterial: 'Ingredients & B2B', scroll: 'SCROLL', langLabel: 'Language',
     readMore: 'Read more', back: 'Back to list', send: 'Send', sending: 'Sending…', sent: 'Sent',
-    error: 'Failed to send. Please try again later.', required: 'required', officialDistributor: 'Official Asia distributor of ERMÁK',
+    error: 'Failed to send. Please try again later.', required: 'required', officialDistributor: 'Official Asia Co-expansion Partner of ERMÁK',
   },
   home: {
     hero: {
-      eyebrow: 'Quality Without Borders · Official Asia distributor of ERMÁK · Ingredient R&D',
+      eyebrow: 'Quality Without Borders · Official Asia Co-expansion Partner of ERMÁK · Ingredient R&D',
       title: 'From Origin', titleAccent: 'to New Value',
       body: 'Fruit grown under the Uzbek sun meets the Asian table — and, through Korean technology, becomes value once again.',
       cta1: 'Explore ERMÁK products', cta2: 'Ingredients & B2B',
@@ -109,7 +109,7 @@ export const en: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: 'We discover good ingredients, build markets, and bring what remains back to life.', body: 'SOLKERN Co., Ltd. connects the natural foods and fruit ingredients of Uzbekistan and Türkiye to Korea and Asia as an ingredient, distribution and R&D company.' },
     statement: 'Origin → Product → Second Life → Market. One continuous flow from Central Asian raw materials to ERMÁK finished goods and Korean secondary-processing materials.',
     identity: [
-      { title: 'Official Asia distributor of ERMÁK', body: 'We introduce the finished goods of ERMÁK, Uzbekistan’s leading natural food brand since 1992, and its juice brand ASIL to Korea and 12 Asia-Pacific markets.' },
+      { title: 'Official Asia Co-expansion Partner of ERMÁK', body: 'We introduce the finished goods of ERMÁK, Uzbekistan’s leading natural food brand since 1992, and its juice brand ASIL to Korea and 12 Asia-Pacific markets.' },
       { title: 'Ingredient R&D · Korean processing', body: 'We analyze, process and standardize fruit ingredients and production by-products (peel, seeds, pomace) into food, beauty and industrial materials.' },
       { title: 'Trust finished with data', body: 'Emotion begins in nature; B2B trust is completed with certificates of analysis, certifications and import-standard reviews.' },
     ],
@@ -125,7 +125,7 @@ export const en: Dict = {
     ],
     info: [
       { label: 'Company', value: 'SOLKERN Co., Ltd.' },
-      { label: 'CEO', value: 'Jang Soon-mo' },
+      { label: 'CEO', value: 'Jin-Tae Park' },
       { label: 'Founded', value: 'August 2026' },
       { label: 'Business', value: 'Food wholesale & retail · Ingredient R&D · IT (app development)' },
       { label: 'Address', value: '5F 505-J341, 10-20 Jungbong-daero 612beon-gil, Seo-gu, Incheon, Korea (Cheongna Plaza)' },

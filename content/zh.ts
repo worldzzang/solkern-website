@@ -54,11 +54,11 @@ export const zh: Dict = {
     more: '了解更多', contact: '联系我们', catalog: '索取目录', b2b: 'B2B咨询',
     viewProducts: '浏览ERMÁK产品', viewMaterial: '原料 · B2B', scroll: 'SCROLL', langLabel: '语言',
     readMore: '阅读全文', back: '返回列表', send: '发送', sending: '发送中…', sent: '已发送',
-    error: '发送失败，请稍后再试。', required: '必填', officialDistributor: 'ERMÁK亚洲官方经销商',
+    error: '发送失败，请稍后再试。', required: '必填', officialDistributor: 'ERMÁK亚洲共同拓展官方合作伙伴',
   },
   home: {
     hero: {
-      eyebrow: 'Quality Without Borders · ERMÁK亚洲官方经销商 · 原料研发',
+      eyebrow: 'Quality Without Borders · ERMÁK亚洲共同拓展官方合作伙伴 · 原料研发',
       title: '从产地', titleAccent: '到新价值',
       body: '乌兹别克斯坦阳光孕育的果实走上亚洲餐桌，并借助韩国技术再次成为价值。',
       cta1: '浏览ERMÁK产品', cta2: '原料 · B2B',
@@ -150,7 +150,7 @@ export const zh: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: '发现好原料，开拓市场，让剩余之物重获新生。', body: 'SOLKERN株式会社是一家原料、流通与研发公司，将乌兹别克斯坦与土耳其的天然食品和水果原料连接至韩国与亚洲。' },
     statement: 'Origin → Product → Second Life → Market。从中亚原料到ERMÁK成品，再到韩国二次加工原料，一条完整的价值链。',
     identity: [
-      { title: 'ERMÁK亚洲官方经销商', body: '将1992年创立的乌兹别克斯坦代表性天然食品品牌ERMÁK及其果汁品牌ASIL的成品，引入韩国及亚太12个市场。' },
+      { title: 'ERMÁK亚洲共同拓展官方合作伙伴', body: '将1992年创立的乌兹别克斯坦代表性天然食品品牌ERMÁK及其果汁品牌ASIL的成品，引入韩国及亚太12个市场。' },
       { title: '原料研发 · 韩国加工', body: '对水果原料与生产副产物（果皮、种子、果渣）进行分析、加工与标准化，制成食品、美容与工业原料。' },
       { title: '以数据成就信任', body: '感动始于自然；B2B信任则由检测报告、认证与进口标准审查来完成。' },
     ],
@@ -166,7 +166,7 @@ export const zh: Dict = {
     ],
     info: [
       { label: '公司名称', value: 'SOLKERN株式会社（SOLKERN Co., Ltd.）' },
-      { label: '代表理事', value: 'Jang Soon-mo' },
+      { label: 'CEO', value: 'Park Jin-tae' },
       { label: '成立', value: '2026年8月' },
       { label: '业务范围', value: '食品批发零售 · 原料研发 · 信息通信（应用开发）' },
       { label: '地址', value: ADDRESS },

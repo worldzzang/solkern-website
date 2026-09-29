@@ -54,11 +54,11 @@ export const ja: Dict = {
     more: 'もっと見る', contact: 'お問い合わせ', catalog: 'カタログ請求', b2b: 'B2Bお問い合わせ',
     viewProducts: 'ERMÁK製品を見る', viewMaterial: '素材・B2B', scroll: 'SCROLL', langLabel: '言語',
     readMore: '続きを読む', back: '一覧へ戻る', send: '送信', sending: '送信中…', sent: '送信完了',
-    error: '送信に失敗しました。しばらくしてから再度お試しください。', required: '必須', officialDistributor: 'ERMÁK アジア公式ディストリビューター',
+    error: '送信に失敗しました。しばらくしてから再度お試しください。', required: '必須', officialDistributor: 'ERMÁK アジア共同進出 公式パートナー',
   },
   home: {
     hero: {
-      eyebrow: 'Quality Without Borders · ERMÁK アジア公式ディストリビューター · 素材R&D',
+      eyebrow: 'Quality Without Borders · ERMÁK アジア共同進出 公式パートナー · 素材R&D',
       title: '産地から', titleAccent: '新たな価値へ',
       body: 'ウズベキスタンの太陽が育てた果実がアジアの食卓へ。そして韓国の技術で、もう一度価値になります。',
       cta1: 'ERMÁK製品を見る', cta2: '素材・B2B',
@@ -150,7 +150,7 @@ export const ja: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: '良い原料を見つけ、市場をつくり、残ったものに新たな命を吹き込みます。', body: '株式会社SOLKERNは、ウズベキスタンとトルコの自然食品と果実原料を韓国・アジアへつなぐ、原料・流通・R&Dカンパニーです。' },
     statement: 'Origin → Product → Second Life → Market。中央アジアの原料からERMÁK完成品、そして韓国の二次加工素材まで、ひとつの流れでつなぎます。',
     identity: [
-      { title: 'ERMÁK アジア公式ディストリビューター', body: '1992年創業のウズベキスタンを代表する自然食品ブランドERMÁKと、ジュースブランドASILの完成品を、韓国およびアジア太平洋12か国に紹介します。' },
+      { title: 'ERMÁK アジア共同進出 公式パートナー', body: '1992年創業のウズベキスタンを代表する自然食品ブランドERMÁKと、ジュースブランドASILの完成品を、韓国およびアジア太平洋12か国に紹介します。' },
       { title: '素材R&D・韓国での加工', body: '果実原料と生産副産物（果皮・種・搾りかす）を分析・加工・規格化し、食品・ビューティー・産業素材にします。' },
       { title: 'データで完成する信頼', body: '感動は自然から始まり、B2Bの信頼は試験成績書・認証・輸入基準の検討で完成します。' },
     ],
@@ -166,7 +166,7 @@ export const ja: Dict = {
     ],
     info: [
       { label: '会社名', value: '株式会社SOLKERN（SOLKERN Co., Ltd.）' },
-      { label: '代表取締役', value: 'チャン・スンモ' },
+      { label: 'CEO', value: 'パク・ジンテ' },
       { label: '設立', value: '2026年8月' },
       { label: '事業内容', value: '食品卸・小売・原料R&D・情報通信（アプリ開発）' },
       { label: '所在地', value: ADDRESS },

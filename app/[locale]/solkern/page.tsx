@@ -71,7 +71,10 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
       </section>
 
       <section className="relative overflow-hidden bg-pome-deep text-white">
-        <img src="/images/bg/founder.webp" alt="" className="absolute right-0 top-0 hidden h-full w-1/3 object-cover opacity-40 mask-fade-b lg:block" />
+        {/* 창립자 사진 — 얼굴이 잘리지 않도록 상단 기준 정렬, 좌측·하단은 배경색으로 자연스럽게 페이드 */}
+        <div aria-hidden className="absolute inset-y-0 right-0 hidden w-[38%] lg:block" style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 72%, transparent)', maskImage: 'linear-gradient(to bottom, #000 72%, transparent)' }}>
+          <img src="/images/bg/founder.webp" alt="" className="h-full w-full object-cover object-[50%_4%] opacity-50" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, #000 35%)', maskImage: 'linear-gradient(to right, transparent, #000 35%)' }} />
+        </div>
         <div className="container-x relative py-20 sm:py-28">
           <Reveal><p className="font-serif text-6xl text-gold">“</p></Reveal>
           <Reveal delay={0.1}><p className="display max-w-3xl text-2xl leading-snug sm:text-3xl">{s.founderQuote.quote}</p></Reveal>

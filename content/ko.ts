@@ -31,11 +31,11 @@ export const ko: Dict = {
     sent: '전송 완료',
     error: '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
     required: '필수',
-    officialDistributor: 'ERMÁK 공식 아시아 총판',
+    officialDistributor: 'ERMÁK 아시아 공동진출 공식파트너',
   },
   home: {
     hero: {
-      eyebrow: 'Quality Without Borders · ERMÁK 공식 아시아 총판 · 원료 R&D',
+      eyebrow: 'Quality Without Borders · ERMÁK 아시아 공동진출 공식파트너 · 원료 R&D',
       title: 'From Origin',
       titleAccent: 'to New Value',
       body: '우즈베키스탄의 자연에서 자란 원물이 아시아의 식탁을 만나고, 한국의 기술을 통해 또 다른 가치로 이어집니다.',
@@ -152,7 +152,7 @@ export const ko: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: '좋은 원물을 발견하고, 시장을 만들고, 남은 가치까지 다시 살립니다.', body: '㈜솔컨은 우즈베키스탄·튀르키예의 자연친화 식품과 과일 원료를 한국과 아시아 시장에 연결하는 원료·유통·R&D 기업입니다.' },
     statement: 'Origin → Product → Second Life → Market. 중앙아시아 원물에서 ERMÁK 완제품, 그리고 한국 2차 가공 소재 사업까지 하나의 흐름으로 연결합니다.',
     identity: [
-      { title: 'ERMÁK 공식 아시아 총판', body: '1992년부터 이어진 우즈베키스탄 대표 자연 식품 브랜드 ERMÁK과 주스 브랜드 ASIL의 완제품을 한국을 비롯한 아시아·태평양 12개국 시장에 소개합니다.' },
+      { title: 'ERMÁK 아시아 공동진출 공식파트너', body: '1992년부터 이어진 우즈베키스탄 대표 자연 식품 브랜드 ERMÁK과 주스 브랜드 ASIL의 완제품을 한국을 비롯한 아시아·태평양 12개국 시장에 소개합니다.' },
       { title: '원료 R&D · 한국 2차 가공', body: '과일 원료와 제조 부산물(껍질·씨앗·박)을 분석·가공·규격화하여 식품·뷰티·산업 소재로 전환합니다.' },
       { title: '데이터로 마무리하는 신뢰', body: '감성은 자연에서 시작하되, B2B 신뢰는 시험성적서·인증·수입 기준 검토로 마무리합니다.' },
     ],
@@ -168,7 +168,7 @@ export const ko: Dict = {
     ],
     info: [
       { label: '회사명', value: '주식회사 솔컨 (SOLKERN Co., Ltd.)' },
-      { label: '대표이사', value: '장순모' },
+      { label: 'CEO', value: '박진태' },
       { label: '설립', value: '2026년 8월' },
       { label: '업종', value: '식품 도소매 · 원료 R&D · 정보통신(앱 개발)' },
       { label: '소재지', value: '인천광역시 서구 중봉대로612번길 10-20, 5층 505-제이341호 (청라동, 청라프라자)' },
