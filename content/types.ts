@@ -73,6 +73,7 @@ export type Dict = {
   ermak: {
     hero: { eyebrow: string; title: string; body: string };
     brandStory: { title: string; body: string; facts: { value: string; label: string }[] };
+    newProducts: { badge: string; title: string; body: string; cta: string };
     categoriesTitle: string;
     categories: Category[];
     korea: { title: string; body: string; phases: { phase: string; items: string; channel: string }[] };

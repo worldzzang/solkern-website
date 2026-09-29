@@ -13,7 +13,9 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
 
       <section className="bg-ivory">
         <div className="container-x py-20 sm:py-28">
+          <Reveal><img src="/images/logo/solkern-stacked-gold.png" alt="SOLKERN" className="mx-auto mb-10 w-40 sm:w-52" /></Reveal>
           <Reveal><p className="display mx-auto max-w-4xl text-center text-2xl leading-snug sm:text-3xl lg:text-4xl">{s.statement}</p></Reveal>
+          <Reveal delay={0.1}><p className="mt-6 text-center font-serif text-2xl italic text-gold">Quality Without Borders</p></Reveal>
           <Stagger className="mt-16 grid gap-6 md:grid-cols-3">
             {s.identity.map((it, i) => (
               <Item key={it.title}>

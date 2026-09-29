@@ -3,16 +3,10 @@ import { motion, useInView, useMotionValue, useSpring, useTransform } from 'fram
 import { useEffect, useRef } from 'react';
 import { PLACEHOLDERS, CUSTOM_READY } from '@/lib/placeholders';
 
-/* ---------- Logo ---------- */
-export function Logo({ light = false, className = '' }: { light?: boolean; className?: string }) {
-  return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <span className="relative inline-block h-7 w-7 rounded-lg bg-ink">
-        <svg viewBox="0 0 64 64" className="absolute inset-0 h-full w-full"><path d="M20 42c0 4 4 7 12 7s12-3 12-8c0-11-22-6-22-16 0-4 4-7 10-7s10 3 10 7" fill="none" stroke="#B49141" strokeWidth="4.5" strokeLinecap="round" /></svg>
-      </span>
-      <span className={`font-sans text-[19px] font-extrabold tracking-[0.18em] ${light ? 'text-white' : 'text-ink'}`}>SOLKERN</span>
-    </span>
-  );
+/* ---------- Logo (official SOLKERN assets: public/images/logo) ---------- */
+export function Logo({ light = false, className = '', tagline = false }: { light?: boolean; className?: string; tagline?: boolean }) {
+  const src = `/images/logo/solkern-horizontal${light ? '-white' : ''}${tagline ? '' : '-compact'}.png`;
+  return <img src={src} alt="SOLKERN — Quality Without Borders" className={`${tagline ? 'h-12' : 'h-8 sm:h-9'} w-auto ${className}`} />;
 }
 
 /* ---------- Reveal on scroll ---------- */

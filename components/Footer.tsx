@@ -9,7 +9,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Dict })
     <footer className="relative bg-ink text-white">
       <div className="container-x grid gap-10 py-16 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Logo light />
+          <Logo light tagline />
           <p className="mt-5 font-serif text-2xl italic text-gold-light">{f.tagline}</p>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">{dict.meta.description}</p>
         </div>

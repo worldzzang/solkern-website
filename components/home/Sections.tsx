@@ -74,7 +74,8 @@ export function Fruit({ locale, dict }: { locale: Locale; dict: Dict }) {
 export function Collection({ locale, dict }: { locale: Locale; dict: Dict }) {
   const s = dict.home.collection;
   const cats = dict.ermak.categories;
-  const showcase = cats.flatMap((c) => c.products.filter((p) => p.image).slice(0, 2).map((p) => ({ ...p, cat: c.name })));
+  const ordered = [...cats.filter((c) => c.id === 'snack'), ...cats.filter((c) => c.id !== 'snack')];
+  const showcase = ordered.flatMap((c) => c.products.filter((p) => p.image).slice(0, c.id === 'snack' ? 3 : 2).map((p) => ({ ...p, cat: c.name })));
   return (
     <section className="relative overflow-hidden bg-ink text-white">
       <ParallaxImg src="/images/bg/splash-pom.webp" className="absolute inset-0 opacity-40" speed={0.1} />

@@ -60,7 +60,7 @@ Environment는 Production + Preview 체크.
 - 모든 문구·제품 데이터: `content/ko.ts`(국문), `content/en.ts`(영문) → GitHub에서 직접 편집·커밋하면 1~2분 후 자동 반영
 - 금지 표현 정책: 무설탕·무첨가·100%·타국 대비 우수·기능성 암시 → 시험성적서/라벨 확인 후에만 추가
 
-### 플레이스홀더 이미지 교체 (27곳)
+### 플레이스홀더 이미지 교체 (25곳)
 1. 사이트에서 `IMG · ID` 태그가 붙은 영역이 대상 — 프롬프트북(`SOLKERN_Image_Prompt_Book.docx`) 참고해 생성
 2. `public/images/custom/{ID}.webp`로 저장(가로 1600~2000px)
 3. `lib/placeholders.ts`의 `CUSTOM_READY` 배열에 `'ID'` 추가 → 커밋 → 자동 반영

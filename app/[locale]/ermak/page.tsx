@@ -23,7 +23,17 @@ export default function ErmakPage({ params }: { params: { locale: string } }) {
           </Stagger>
         </div>
       </section>
-      <section className="bg-ivory-2">
+      <section className="relative overflow-hidden bg-ink text-white">
+        <img src="/images/bg/snack-lineup.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
+        <div className="container-x relative py-24 sm:py-32">
+          <Reveal><span className="rounded-full bg-[#E5322D] px-3 py-1 text-[11px] font-bold tracking-widest text-white">{s.newProducts.badge}</span></Reveal>
+          <Reveal delay={0.1}><h2 className="h2 mt-5 max-w-3xl">{s.newProducts.title}</h2></Reveal>
+          <Reveal delay={0.2}><p className="lead mt-5 max-w-2xl text-white/80">{s.newProducts.body}</p></Reveal>
+          <Reveal delay={0.3}><a href="#products" className="btn-gold mt-8">{s.newProducts.cta} →</a></Reveal>
+        </div>
+      </section>
+      <section id="products" className="bg-ivory-2">
         <div className="container-x py-20 sm:py-28">
           <SectionHead eyebrow="PRODUCTS" title={s.categoriesTitle} />
           <div className="mt-10"><ProductExplorer categories={s.categories} locale={locale} /></div>
