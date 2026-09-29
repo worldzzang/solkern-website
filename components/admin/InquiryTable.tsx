@@ -2,6 +2,9 @@
 import { useMemo, useState } from 'react';
 import type { Inquiry } from '@/lib/store';
 
+// 한국 시간(KST) 표시
+const kst = (iso: string) => new Date(iso).toLocaleString('sv-SE', { timeZone: 'Asia/Seoul', hour12: false }).slice(0, 16);
+
 const STATUS: Record<Inquiry['status'], { label: string; cls: string }> = {
   new: { label: '신규', cls: 'bg-gold/15 text-gold-dark' },
   in_progress: { label: '진행 중', cls: 'bg-blue-100 text-blue-700' },
@@ -29,7 +32,7 @@ export default function InquiryTable({ initial }: { initial: Inquiry[] }) {
   function exportCsv() {
     const cols: (keyof Inquiry)[] = ['id', 'createdAt', 'status', 'type', 'name', 'company', 'email', 'phone', 'country', 'product', 'quantity', 'message', 'memo'];
     const esc = (v: unknown) => `"${String(v ?? '').replace(/"/g, '""')}"`;
-    const csv = '﻿' + [cols.join(','), ...shown.map((i) => cols.map((c) => esc(i[c])).join(','))].join('\n');
+    const csv = '﻿' + [cols.join(','), ...shown.map((i) => cols.map((c) => esc(c === 'createdAt' ? kst(i.createdAt) : i[c])).join(','))].join('\n');
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = `solkern-inquiries-${new Date().toISOString().slice(0, 10)}.csv`; a.click();
   }
 
@@ -49,7 +52,7 @@ export default function InquiryTable({ initial }: { initial: Inquiry[] }) {
           <tbody>
             {shown.map((i) => (
               <tr key={i.id} className="border-b border-black/5 hover:bg-ivory/60">
-                <td className="py-3 pr-3 whitespace-nowrap text-xs">{i.createdAt.slice(0, 16).replace('T', ' ')}</td>
+                <td className="py-3 pr-3 whitespace-nowrap text-xs">{kst(i.createdAt)}</td>
                 <td className="py-3 pr-3"><span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${STATUS[i.status].cls}`}>{STATUS[i.status].label}</span></td>
                 <td className="py-3 pr-3 whitespace-nowrap">{i.type}</td>
                 <td className="py-3 pr-3"><b>{i.name}</b><br /><span className="text-xs text-ink-3">{i.company}</span></td>
@@ -67,7 +70,7 @@ export default function InquiryTable({ initial }: { initial: Inquiry[] }) {
         <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-4 sm:items-center" onClick={() => setOpen(null)}>
           <div className="card max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-white p-6" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-4">
-              <div><p className="text-xs text-ink-3">{open.id} · {open.createdAt.slice(0, 16).replace('T', ' ')} · {open.locale.toUpperCase()}</p><h3 className="mt-1 text-xl font-bold">{open.type} — {open.company || open.name}</h3></div>
+              <div><p className="text-xs text-ink-3">{open.id} · {kst(open.createdAt)} KST · {open.locale.toUpperCase()}</p><h3 className="mt-1 text-xl font-bold">{open.type} — {open.company || open.name}</h3></div>
               <button onClick={() => setOpen(null)} className="text-2xl leading-none">×</button>
             </div>
             <dl className="mt-5 grid grid-cols-3 gap-y-2 text-sm">
