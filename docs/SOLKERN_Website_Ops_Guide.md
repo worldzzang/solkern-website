@@ -19,8 +19,8 @@ Vercel 연동 토큰이 "배포 전용"이라 아래 설정은 대시보드에�
 ### ① 환경변수 등록 — Settings → Environment Variables
 | Key | Value | 비고 |
 |---|---|---|
-| `ADMIN_PASSWORD` | `ncPENr8imxikwl` | 관리자 로그인 비밀번호. **원하는 값으로 변경 권장** |
-| `ADMIN_SECRET` | `2b3ed8d8262d5baf08141db696aefeae02657c98e0271b977fafbe0d6a6fe8f4` | 세션 서명키(임의 문자열) |
+| `ADMIN_PASSWORD` | (채팅으로 전달한 값) | 관리자 로그인 비밀번호. **원하는 값으로 변경 권장** |
+| `ADMIN_SECRET` | (채팅으로 전달한 값) | 세션 서명키(임의 문자열) |
 | `NOTIFY_EMAIL` | `solkern@solkern.kr` | (선택) 문의 알림 수신 주소 |
 | `RESEND_API_KEY` | resend.com 발급 키 | (선택) 문의 접수 시 이메일 알림. 미설정 시 관리자 페이지에서만 확인 |
 Environment는 Production + Preview 체크.
