@@ -15,7 +15,7 @@ Next.js 14 · Tailwind · framer-motion · Vercel Blob. 한국어/영어 토글,
 |---|---|
 | `ADMIN_PASSWORD` | 관리자 로그인 비밀번호 |
 | `ADMIN_SECRET` | 세션 서명용 임의 문자열 |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob 연결 시 자동 주입 (문의·소식 저장) |
+| `BLOB_STORE_ID` (또는 `BLOB_READ_WRITE_TOKEN`) | Vercel Blob 연결 시 자동 주입 (문의·소식 저장) |
 | `RESEND_API_KEY` / `NOTIFY_EMAIL` | (선택) 문의 접수 이메일 알림 — resend.com 무료 계정 |
 
 ## 플레이스홀더 이미지 교체

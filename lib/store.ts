@@ -6,7 +6,8 @@ import path from 'path';
  * 저장소 추상화 — Vercel Blob(BLOB_READ_WRITE_TOKEN 존재 시) / 로컬 파일(.data/, 개발용)
  * 컬렉션: inquiries (문의), news (관리자 작성 소식)
  */
-const useBlob = () => !!process.env.BLOB_READ_WRITE_TOKEN;
+// Vercel Blob: 신규 연결은 OIDC + BLOB_STORE_ID, 구형은 BLOB_READ_WRITE_TOKEN
+const useBlob = () => !!(process.env.BLOB_STORE_ID || process.env.BLOB_READ_WRITE_TOKEN || process.env.VERCEL);
 const LOCAL = path.join(process.cwd(), '.data');
 
 export type Inquiry = {
