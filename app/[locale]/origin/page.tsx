@@ -10,7 +10,7 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
   return (
     <>
       <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} placeholder="ORIGIN-SUN" />
-      <Marquee items={locale === 'ko' ? ['햇빛', '토양', '기후', '과수 문화', '우즈베키스탄', '튀르키예', '석류', '살구', '체리', '견과'] : ['Sun', 'Soil', 'Climate', 'Orchard culture', 'Uzbekistan', 'Türkiye', 'Pomegranate', 'Apricot', 'Cherry', 'Nuts']} />
+      <Marquee items={dict.ui.originMarquee} />
 
       {/* Chapters */}
       <section className="bg-ivory">
@@ -33,7 +33,7 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
         <ParallaxImg src="/images/bg/apple-press.webp" className="absolute inset-0 opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
         <div className="container-x relative py-20 sm:py-28">
-          <SectionHead eyebrow="REGIONS" title={locale === 'ko' ? '원물이 자라는 곳' : 'Where the ingredients grow'} dark />
+          <SectionHead eyebrow="REGIONS" title={dict.ui.sections.originRegions} dark />
           <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {s.regions.map((r) => (
               <Item key={r.name}>

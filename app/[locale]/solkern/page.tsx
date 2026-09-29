@@ -32,7 +32,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
 
       <section className="bg-ink text-white">
         <div className="container-x py-20 sm:py-28">
-          <SectionHead eyebrow="BUSINESS" title={locale === 'ko' ? '세 개의 비즈니스, 하나의 흐름' : 'Three businesses, one flow'} dark />
+          <SectionHead eyebrow="BUSINESS" title={dict.ui.sections.solkernBusiness} dark />
           <Stagger className="mt-14 grid gap-6 lg:grid-cols-3">
             {s.business.map((b) => (
               <Item key={b.title}>
@@ -50,7 +50,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
       <section className="bg-ivory-2">
         <div className="container-x grid gap-12 py-20 sm:py-28 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHead eyebrow="PARTNERS" title={locale === 'ko' ? '생산에서 판매까지, 3사 협력 구조' : 'From production to sales: a three-company structure'} />
+            <SectionHead eyebrow="PARTNERS" title={dict.ui.sections.solkernPartners} />
             <Reveal delay={0.2}><Placeholder id="ABOUT-TEAM" className="mt-10 aspect-[4/3] rounded-3xl" /></Reveal>
           </div>
           <Stagger className="space-y-4 lg:col-span-7">
@@ -81,7 +81,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
 
       <section className="bg-ivory">
         <div className="container-x grid gap-12 py-20 sm:py-28 lg:grid-cols-12">
-          <div className="lg:col-span-5"><SectionHead eyebrow="COMPANY INFO" title={locale === 'ko' ? '회사 정보' : 'Company information'} /><Reveal delay={0.2}><Placeholder id="ABOUT-OFFICE" className="mt-8 aspect-video rounded-2xl" /></Reveal></div>
+          <div className="lg:col-span-5"><SectionHead eyebrow="COMPANY INFO" title={dict.ui.sections.companyInfo} /><Reveal delay={0.2}><Placeholder id="ABOUT-OFFICE" className="mt-8 aspect-video rounded-2xl" /></Reveal></div>
           <div className="lg:col-span-7">
             <Reveal>
               <dl className="divide-y divide-black/10 border-y border-black/10">

@@ -44,3 +44,9 @@ label { @apply block text-xs font-semibold tracking-wide text-ink-3 mb-1.5; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* 일본어·중국어 모드: Pretendard(한글·라틴)에 없는 가나·한자 글리프를 OS 고딕/명조로 폴백 ([locale] 레이아웃 래퍼의 lang 속성 기준) */
+[lang="ja"] { font-family: Pretendard, 'Pretendard Variable', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Noto Sans CJK JP', 'Yu Gothic', Meiryo, system-ui, sans-serif; line-break: strict; }
+[lang="ja"] .font-serif, [lang="ja"] .display { font-family: 'Cormorant Garamond', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', 'Noto Serif CJK JP', serif; }
+[lang="zh-Hans"] { font-family: Pretendard, 'Pretendard Variable', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Noto Sans CJK SC', 'Microsoft YaHei', system-ui, sans-serif; line-break: strict; }
+[lang="zh-Hans"] .font-serif, [lang="zh-Hans"] .display { font-family: 'Cormorant Garamond', 'Songti SC', 'Noto Serif SC', 'Noto Serif CJK SC', SimSun, serif; }

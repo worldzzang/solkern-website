@@ -1,4 +1,4 @@
-export type Locale = 'ko' | 'en';
+export type Locale = 'ko' | 'en' | 'ja' | 'zh';
 
 export type Product = {
   id: string;
@@ -115,5 +115,16 @@ export type Dict = {
     address: string;
   };
   territory: Territory;
+  ui: {
+    langName: string;
+    sections: { solkernBusiness: string; solkernPartners: string; companyInfo: string; originRegions: string; labTracks: string; labProcess: string; b2bServices: string; b2bProcess: string; b2bFaq: string };
+    originMarquee: string[];
+    table: { region: string; country: string; city: string };
+    regionsLabel: string; originsLabel: string;
+    prev: string; next: string;
+    productNote: string;
+    countryPlaceholder: string;
+    privacy: { title: string; intro: string; items: string[]; officer: string };
+  };
   footer: { tagline: string; company: string; ceo: string; regNo: string; address: string; email: string; tel: string; copyright: string; links: { label: string; href: string }[] };
 };

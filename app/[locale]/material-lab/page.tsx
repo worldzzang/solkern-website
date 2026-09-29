@@ -19,7 +19,7 @@ export default function MaterialLabPage({ params }: { params: { locale: string }
       </section>
       <section className="bg-ivory-2">
         <div className="container-x space-y-10 py-20 sm:py-28">
-          <SectionHead eyebrow="TRACKS" title={locale === 'ko' ? '세 가지 소재 트랙' : 'Three material tracks'} />
+          <SectionHead eyebrow="TRACKS" title={dict.ui.sections.labTracks} />
           {s.tracks.map((t, i) => (
             <div key={t.id} className={`grid items-center gap-8 lg:grid-cols-12 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
               <Reveal className="lg:col-span-6"><Placeholder id={t.placeholder} className="aspect-[4/3] rounded-3xl" /></Reveal>
@@ -38,7 +38,7 @@ export default function MaterialLabPage({ params }: { params: { locale: string }
       </section>
       <section className="bg-ink text-white">
         <div className="container-x py-20 sm:py-28">
-          <SectionHead eyebrow="PROCESS" title={locale === 'ko' ? '부산물에서 규격 원료까지' : 'From by-product to standardized ingredient'} dark />
+          <SectionHead eyebrow="PROCESS" title={dict.ui.sections.labProcess} dark />
           <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {s.process.map((p) => (
               <Item key={p.step}><div className="h-full rounded-2xl border border-white/10 bg-white/5 p-5"><p className="font-serif text-4xl text-gold">{p.step}</p><h3 className="mt-3 font-bold">{p.title}</h3><p className="mt-2 text-xs leading-relaxed text-white/60">{p.desc}</p></div></Item>

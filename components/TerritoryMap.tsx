@@ -56,13 +56,20 @@ export default function TerritoryMap({ t, dark = false, compact = false, hideLis
               <rect width="5" height="5" fill={col.direct} />
               <line x1="0" y1="0" x2="0" y2="5" stroke={dark ? '#4a4a4a' : '#c4b89f'} strokeWidth="1.6" />
             </pattern>
+            {/* 좌·상단에서 잘린 육지가 배경과 단차 없이 사라지도록 페이드 마스크 */}
+            <linearGradient id={`fx-${dark ? 'd' : 'l'}`} gradientUnits="userSpaceOnUse" x1={VB.x} y1="0" x2={VB.x + 90} y2="0"><stop offset="0" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#fff" stopOpacity="1" /></linearGradient>
+            <linearGradient id={`fy-${dark ? 'd' : 'l'}`} gradientUnits="userSpaceOnUse" x1="0" y1={VB.y} x2="0" y2={VB.y + 80}><stop offset="0" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#fff" stopOpacity="1" /></linearGradient>
+            <mask id={`mx-${dark ? 'd' : 'l'}`} maskUnits="userSpaceOnUse" x={VB.x - 10} y={VB.y - 10} width={VB.w + 20} height={VB.h + 20}><rect x={VB.x - 10} y={VB.y - 10} width={VB.w + 20} height={VB.h + 20} fill={`url(#fx-${dark ? 'd' : 'l'})`} /></mask>
+            <mask id={`my-${dark ? 'd' : 'l'}`} maskUnits="userSpaceOnUse" x={VB.x - 10} y={VB.y - 10} width={VB.w + 20} height={VB.h + 20}><rect x={VB.x - 10} y={VB.y - 10} width={VB.w + 20} height={VB.h + 20} fill={`url(#fy-${dark ? 'd' : 'l'})`} /></mask>
             <radialGradient id="glow"><stop offset="0" stopColor="#D4B46A" stopOpacity=".55" /><stop offset="1" stopColor="#D4B46A" stopOpacity="0" /></radialGradient>
           </defs>
 
-          {/* 배경 국가 */}
-          <g fill={col.land} stroke={col.stroke} strokeWidth="0.6">{BASE_PATHS.map((d, i) => <path key={i} d={d} />)}</g>
-          {/* 중앙아시아 — 본사 직접 관리 */}
-          <g fill={`url(#hatch-${dark ? 'd' : 'l'})`} stroke={col.stroke} strokeWidth="0.6">{Object.values(CENTRAL_ASIA_PATHS).map((d, i) => <path key={i} d={d} />)}</g>
+          <g mask={`url(#mx-${dark ? 'd' : 'l'})`}><g mask={`url(#my-${dark ? 'd' : 'l'})`}>
+            {/* 배경 국가 */}
+            <g fill={col.land} stroke={col.stroke} strokeWidth="0.6">{BASE_PATHS.map((d, i) => <path key={i} d={d} />)}</g>
+            {/* 중앙아시아 — 본사 직접 관리 */}
+            <g fill={`url(#hatch-${dark ? 'd' : 'l'})`} stroke={col.stroke} strokeWidth="0.6">{Object.values(CENTRAL_ASIA_PATHS).map((d, i) => <path key={i} d={d} />)}</g>
+          </g></g>
           {/* 원산지 */}
           <g stroke={col.stroke} strokeWidth="0.6">
             {Object.entries(ORIGIN_PATHS).map(([k, d]) => (

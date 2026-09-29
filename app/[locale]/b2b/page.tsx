@@ -13,7 +13,7 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
       <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} image="/images/bg/seeds-orange.webp" />
       <section className="bg-ivory">
         <div className="container-x py-20 sm:py-28">
-          <SectionHead eyebrow="SERVICES" title={locale === 'ko' ? '협력 방식' : 'How we work together'} />
+          <SectionHead eyebrow="SERVICES" title={dict.ui.sections.b2bServices} />
           <Stagger className="mt-12 grid gap-5 sm:grid-cols-2">
             {s.services.map((sv, i) => (
               <Item key={sv.id}>
@@ -36,7 +36,7 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
               <Reveal delay={0.2}>
                 <div className="mt-8 overflow-hidden rounded-2xl border border-black/10 bg-white/70">
                   <table className="w-full text-sm">
-                    <thead><tr className="bg-ink text-left text-[11px] tracking-wider text-gold-light"><th className="px-4 py-2.5">{locale === 'ko' ? '권역' : 'Region'}</th><th className="px-4 py-2.5">{locale === 'ko' ? '국가' : 'Country'}</th><th className="px-4 py-2.5">{locale === 'ko' ? '주요 도시' : 'Key city'}</th></tr></thead>
+                    <thead><tr className="bg-ink text-left text-[11px] tracking-wider text-gold-light"><th className="px-4 py-2.5">{dict.ui.table.region}</th><th className="px-4 py-2.5">{dict.ui.table.country}</th><th className="px-4 py-2.5">{dict.ui.table.city}</th></tr></thead>
                     <tbody>
                       {dict.territory.regions.flatMap((r) => r.countries.map((c, i) => (
                         <tr key={c.code} className="border-t border-black/5">
@@ -57,7 +57,7 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
       </section>
       <section className="bg-ink text-white">
         <div className="container-x py-20 sm:py-28">
-          <SectionHead eyebrow="PROCESS" title={locale === 'ko' ? '문의부터 공급까지' : 'From inquiry to supply'} dark />
+          <SectionHead eyebrow="PROCESS" title={dict.ui.sections.b2bProcess} dark />
           <div className="relative mt-12 grid gap-6 md:grid-cols-4">
             {s.steps.map((st, i) => (
               <Reveal key={st.step} delay={i * 0.15}>
@@ -77,7 +77,7 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
       </section>
       <section className="bg-ivory-2">
         <div className="container-x py-20 sm:py-28">
-          <SectionHead eyebrow="FAQ" title={locale === 'ko' ? '자주 묻는 질문' : 'Frequently asked questions'} />
+          <SectionHead eyebrow="FAQ" title={dict.ui.sections.b2bFaq} />
           <div className="mt-10 divide-y divide-black/10 border-y border-black/10">
             {s.faq.map((f) => (
               <details key={f.q} className="group py-5">

@@ -35,7 +35,7 @@ export default function ContactForm({ locale, dict }: { locale: Locale; dict: Di
             <div><label>{f.company}</label><input name="company" maxLength={120} /></div>
             <div><label>{f.email} <span className="text-gold">*</span></label><input name="email" type="email" required /></div>
             <div><label>{f.phone}</label><input name="phone" maxLength={40} /></div>
-            <div><label>{f.country}</label><input name="country" maxLength={60} placeholder={locale === 'ko' ? '대한민국' : 'Korea'} /></div>
+            <div><label>{f.country}</label><input name="country" maxLength={60} placeholder={dict.ui.countryPlaceholder} /></div>
             <div><label>{f.type} <span className="text-gold">*</span></label>
               <select name="type" defaultValue={preset}>{f.typeOptions.map((o) => <option key={o}>{o}</option>)}</select></div>
             <div><label>{f.product}</label><input name="product" maxLength={200} /></div>

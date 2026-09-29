@@ -36,7 +36,7 @@ export default function ErmakPage({ params }: { params: { locale: string } }) {
       <section id="products" className="bg-ivory-2">
         <div className="container-x py-20 sm:py-28">
           <SectionHead eyebrow="PRODUCTS" title={s.categoriesTitle} />
-          <div className="mt-10"><ProductExplorer categories={s.categories} locale={locale} /></div>
+          <div className="mt-10"><ProductExplorer categories={s.categories} note={dict.ui.productNote} /></div>
         </div>
       </section>
       <section className="bg-ink text-white">

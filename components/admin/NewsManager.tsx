@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import type { NewsPost } from '@/lib/store';
 
-type Form = { id?: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'both'; published: boolean };
+type Form = { id?: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'both'; published: boolean };
 const empty: Form = { date: new Date().toISOString().slice(0, 10), category: 'NEWS', title: '', summary: '', body: '', locale: 'both', published: true };
 
 export default function NewsManager({ initial }: { initial: NewsPost[] }) {
@@ -33,11 +33,11 @@ export default function NewsManager({ initial }: { initial: NewsPost[] }) {
         <div><label>요약 (카드에 표시)</label><textarea rows={2} value={form.summary} onChange={(e) => set('summary', e.target.value)} /></div>
         <div><label>본문</label><textarea rows={6} value={form.body} onChange={(e) => set('body', e.target.value)} /></div>
         <div className="grid grid-cols-2 gap-3">
-          <div><label>노출 언어</label><select value={form.locale} onChange={(e) => set('locale', e.target.value)}><option value="both">한국어+영어</option><option value="ko">한국어만</option><option value="en">영어만</option></select></div>
+          <div><label>노출 언어</label><select value={form.locale} onChange={(e) => set('locale', e.target.value)}><option value="both">전체 언어 (한·영·일·중)</option><option value="ko">한국어만</option><option value="en">영어만</option><option value="ja">일본어만</option><option value="zh">중국어만</option></select></div>
           <div><label>공개</label><select value={String(form.published)} onChange={(e) => set('published', e.target.value === 'true')}><option value="true">공개</option><option value="false">비공개(초안)</option></select></div>
         </div>
         <div className="flex gap-2"><button disabled={busy} className="btn-dark !px-5 !py-2 text-xs">{busy ? '저장 중…' : '저장'}</button>{form.id && <button type="button" onClick={() => setForm(empty)} className="btn-outline-dark !px-5 !py-2 text-xs">취소</button>}</div>
-        <p className="text-xs text-ink-3">※ 코드에 내장된 기본 소식 3건은 content/ko.ts · en.ts 에서 수정합니다.</p>
+        <p className="text-xs text-ink-3">※ 코드에 내장된 기본 소식 3건은 content/ko.ts · en.ts · ja.ts · zh.ts 에서 수정합니다.</p>
       </form>
       <div className="card bg-white p-6 lg:col-span-7">
         <h3 className="font-bold">등록된 소식 ({items.length})</h3>

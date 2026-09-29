@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import type { Dict, Locale } from '@/content/types';
 import { withLocale } from '@/lib/i18n';
 import dynamic from 'next/dynamic';
+import CollectionCarousel from './CollectionCarousel';
 import { Counter, Item, Marquee, ParallaxImg, Placeholder, Reveal, SectionHead, Stagger } from '../ui';
 
 // 지도 데이터(약 35KB gz)는 별도 청크로 분리해 첫 화면 로딩에 영향 없도록
@@ -88,19 +89,7 @@ export function Collection({ locale, dict }: { locale: Locale; dict: Dict }) {
         <div className="container-x pt-24 sm:pt-32">
           <SectionHead eyebrow={s.eyebrow} title={s.title} body={s.body} dark />
         </div>
-        <div className="no-scrollbar mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-6 sm:px-8 lg:px-[calc((100vw-1280px)/2+48px)]">
-          {showcase.map((p, i) => (
-            <motion.div key={p.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 6) * 0.08, duration: 0.7 }}
-              className="group relative w-[220px] shrink-0 snap-start sm:w-[260px]">
-              <div className="relative flex aspect-[3/4] items-end justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition duration-500 group-hover:border-gold/60 group-hover:bg-white/10">
-                <div className="absolute inset-x-6 bottom-6 top-auto h-1/2 rounded-full bg-gold/20 blur-2xl transition group-hover:bg-gold/40" />
-                <img src={p.image} alt={p.name} className="relative z-10 max-h-[85%] w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)] transition duration-700 group-hover:-translate-y-2 group-hover:scale-105" />
-              </div>
-              <p className="mt-3 text-[10px] tracking-[0.2em] text-gold">{p.cat}</p>
-              <p className="text-sm font-semibold">{p.name}</p>
-            </motion.div>
-          ))}
-        </div>
+        <CollectionCarousel items={showcase} prevLabel={dict.ui.prev} nextLabel={dict.ui.next} />
         <div className="container-x pb-8"><Reveal><Link href={withLocale(locale, '/contact')} className="btn-gold">{s.cta} <span>→</span></Link></Reveal></div>
         <Marquee dark items={cats.map((c) => c.en)} />
         <div className="h-16" />
@@ -210,8 +199,8 @@ export function Market({ locale, dict }: { locale: Locale; dict: Dict }) {
           <div className="lg:col-span-7"><SectionHead eyebrow={s.eyebrow} title={s.title} body={s.body} dark /></div>
           <Stagger className="grid grid-cols-3 gap-4 lg:col-span-5">
             <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="12" /></p><p className="mt-1 text-xs text-white/60">{t.countLabel}</p></Item>
-            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="3" /></p><p className="mt-1 text-xs text-white/60">{locale === 'ko' ? '권역' : 'Regions'}</p></Item>
-            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="2" /></p><p className="mt-1 text-xs text-white/60">{locale === 'ko' ? '원산지' : 'Origins'}</p></Item>
+            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="3" /></p><p className="mt-1 text-xs text-white/60">{dict.ui.regionsLabel}</p></Item>
+            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="2" /></p><p className="mt-1 text-xs text-white/60">{dict.ui.originsLabel}</p></Item>
           </Stagger>
         </div>
         <Reveal className="mt-12"><TerritoryMap t={t} dark /></Reveal>
