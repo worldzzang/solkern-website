@@ -71,9 +71,9 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
       </section>
 
       <section className="relative overflow-hidden bg-pome-deep text-white">
-        {/* 창립자 사진 — 얼굴이 잘리지 않도록 상단 기준 정렬, 좌측·하단은 배경색으로 자연스럽게 페이드 */}
-        <div aria-hidden className="absolute inset-y-0 right-0 hidden w-[38%] lg:block" style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 72%, transparent)', maskImage: 'linear-gradient(to bottom, #000 72%, transparent)' }}>
-          <img src="/images/bg/founder.webp" alt="" className="h-full w-full object-cover object-[50%_4%] opacity-50" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, #000 35%)', maskImage: 'linear-gradient(to right, transparent, #000 35%)' }} />
+        {/* 창립자 사진 — 상체(머리~손)까지 보이도록 세로 기준 배치, 좌측·하단은 배경색으로 페이드 */}
+        <div aria-hidden className="absolute inset-y-0 right-[3%] hidden overflow-hidden lg:block" style={{ WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent)', maskImage: 'linear-gradient(to bottom, #000 78%, transparent)' }}>
+          <img src="/images/bg/founder.webp" alt="" className="block h-[132%] w-auto max-w-none opacity-55" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, #000 30%, #000 85%, transparent)', maskImage: 'linear-gradient(to right, transparent, #000 30%, #000 85%, transparent)' }} />
         </div>
         <div className="container-x relative py-20 sm:py-28">
           <Reveal><p className="font-serif text-6xl text-gold">“</p></Reveal>
