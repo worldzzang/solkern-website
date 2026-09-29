@@ -7,7 +7,7 @@
 |---|---|
 | 소스코드 | GitHub `worldzzang/solkern-website` (main 브랜치 push → Vercel 자동 재배포) |
 | 호스팅 | Vercel 프로젝트 `project-c2m6o` (이름 변경 권장 → `solkern-website`), 무료 Hobby 플랜 |
-| 현재 URL | https://project-c2m6o.vercel.app (Vercel 로그인 상태에서만 열림 — 도메인 연결 후 공개) |
+| 공개 URL | https://www.solkern.kr (solkern.kr → www 자동 이동) |
 | 스택 | Next.js 14 · Tailwind · framer-motion · Vercel Blob(문의 저장) |
 | 언어 | 한국어(기본) / 영어 토글 (`/ko`, `/en`) — 영문은 자동 번역본, 네이티브 검수 권장 |
 | 메뉴 | SOLKERN · ORIGIN · ERMÁK · MATERIAL LAB · B2B · NEWS · CONTACT |
@@ -27,7 +27,7 @@ Environment는 Production + Preview 체크.
 
 ### ② 문의 저장소 연결 — Storage → Create Database → **Blob**
 - 이름: `solkern-inquiries`, Access: **Private**, 프로젝트 `project-c2m6o`에 Connect
-- 연결하면 `BLOB_READ_WRITE_TOKEN` 환경변수가 자동 등록됩니다.
+- 연결하면 `BLOB_STORE_ID`, `BLOB_WEBHOOK_PUBLIC_KEY`가 자동 등록됩니다(OIDC 방식, 코드 대응 완료).
 
 ### ③ 재배포 — Deployments → 최신 배포 ⋯ → **Redeploy**
 환경변수는 재배포 후 적용됩니다.
@@ -36,15 +36,16 @@ Environment는 Production + Preview 체크.
 - `www.solkern.kr` 추가 → 이어서 `solkern.kr` 추가(www로 리다이렉트 선택)
 - 추가하면 아래와 같은 DNS 값이 표시됩니다(기본값이며 화면 표시값을 우선).
 
-## 3. 가비아 DNS 설정
-가비아 → My가비아 → 도메인 관리 → `solkern.kr` → **DNS 정보 → DNS 설정** → 레코드 수정
-| 타입 | 호스트 | 값/위치 | TTL |
+## 3. 가비아 DNS 설정 (2026-09-30 완료)
+| 타입 | 호스트 | 값/위치 | 비고 |
 |---|---|---|---|
-| CNAME | `www` | `cname.vercel-dns.com.` | 3600 |
-| A | `@` | `76.76.21.21` | 3600 |
-- 기존에 `www` 또는 `@`에 잡혀 있는 A/CNAME 레코드(가비아 파킹 페이지 등)는 삭제 후 등록합니다.
-- 저장 후 10분~최대 48시간 내 반영. Vercel Domains 화면에서 "Valid Configuration" 표시되면 완료, SSL 인증서는 자동 발급됩니다.
-- 이메일(`solkern@solkern.kr`)을 가비아/다른 메일서비스로 쓰고 있다면 **MX 레코드는 건드리지 않습니다.**
+| MX | @ | mx1.hiworks.com. (10) | 하이웍스 메일 — 유지 |
+| MX | @ | mx2.hiworks.com. (20) | 하이웍스 메일 — 유지 |
+| TXT | @ | "v=spf1 include:_spf.hiworks.co.kr ~all" | 메일 SPF — 유지 |
+| A | @ | 216.198.79.1 | Vercel 권장 신규 IP |
+| CNAME | www | 1e92b4ea38f62bda.vercel-dns-017.com. | Vercel 프로젝트 전용 |
+- Vercel Domains: `www.solkern.kr` → Production, `solkern.kr` → www로 308 리다이렉트, 모두 Valid Configuration
+- 구형 값(76.76.21.21 / cname.vercel-dns.com)도 동작하지만 신규 값 사용 중
 
 ## 4. 운영 방법
 ### 문의 관리
