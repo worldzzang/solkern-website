@@ -3,7 +3,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { Dict, Locale } from '@/content/types';
 import { withLocale } from '@/lib/i18n';
+import dynamic from 'next/dynamic';
 import { Counter, Item, Marquee, ParallaxImg, Placeholder, Reveal, SectionHead, Stagger } from '../ui';
+
+// 지도 데이터(약 35KB gz)는 별도 청크로 분리해 첫 화면 로딩에 영향 없도록
+const TerritoryMap = dynamic(() => import('../TerritoryMap'), { ssr: false, loading: () => <div className="aspect-[702/590] w-full animate-pulse rounded-2xl bg-white/5" /> });
 
 /* 02 THE LAND */
 export function Land({ locale, dict }: { locale: Locale; dict: Dict }) {
@@ -194,52 +198,34 @@ export function MaterialValue({ locale, dict }: { locale: Locale; dict: Dict }) 
   );
 }
 
-/* 08 MARKET */
+/* 08 MARKET — 판권 12개국 지도 */
 export function Market({ locale, dict }: { locale: Locale; dict: Dict }) {
   const s = dict.home.market;
-  const pts = [
-    { x: 300, y: 130 }, // UZ
-    { x: 150, y: 150 }, // TR
-    { x: 640, y: 150 }, // KR
-    { x: 560, y: 300 }, // ASIA
-  ];
+  const t = dict.territory;
   return (
     <section className="relative overflow-hidden bg-ink text-white">
-      <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-[0.05]" />
-      <div className="container-x relative grid gap-12 py-24 sm:py-32 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-5">
-          <SectionHead eyebrow={s.eyebrow} title={s.title} body={s.body} dark />
-          <Stagger className="mt-10 grid grid-cols-2 gap-5">
-            {s.nodes.map((n, i) => (
-              <Item key={n.name}>
-                <div className="border-l-2 border-gold/50 pl-4">
-                  <p className="text-xs tracking-[0.2em] text-gold">{String(i + 1).padStart(2, '0')} · {n.name}</p>
-                  <p className="mt-1 text-sm text-white/75">{n.role}</p>
-                </div>
-              </Item>
-            ))}
+      <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-[0.04]" />
+      <div className="container-x relative py-24 sm:py-32">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7"><SectionHead eyebrow={s.eyebrow} title={s.title} body={s.body} dark /></div>
+          <Stagger className="grid grid-cols-3 gap-4 lg:col-span-5">
+            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="12" /></p><p className="mt-1 text-xs text-white/60">{t.countLabel}</p></Item>
+            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="3" /></p><p className="mt-1 text-xs text-white/60">{locale === 'ko' ? '권역' : 'Regions'}</p></Item>
+            <Item><p className="display text-6xl text-gold sm:text-7xl"><Counter value="2" /></p><p className="mt-1 text-xs text-white/60">{locale === 'ko' ? '원산지' : 'Origins'}</p></Item>
           </Stagger>
-          <Reveal delay={0.2}><Link href={withLocale(locale, '/b2b')} className="btn-gold mt-10">{s.cta} <span>→</span></Link></Reveal>
         </div>
-        <div className="lg:col-span-7">
-          <Reveal>
-            <svg viewBox="0 0 760 400" className="w-full">
-              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stopColor="#B49141" stopOpacity="0.2" /><stop offset="1" stopColor="#D4B46A" /></linearGradient></defs>
-              {[[1, 0], [0, 2], [2, 3]].map(([a, b], i) => {
-                const A = pts[a], B = pts[b]; const cx = (A.x + B.x) / 2, cy = Math.min(A.y, B.y) - 80;
-                return <motion.path key={i} d={`M${A.x} ${A.y} Q${cx} ${cy} ${B.x} ${B.y}`} fill="none" stroke="url(#g)" strokeWidth="2" strokeDasharray="6 6"
-                  initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, delay: 0.3 + i * 0.4 }} />;
-              })}
-              {pts.map((p, i) => (
-                <g key={i}>
-                  <motion.circle cx={p.x} cy={p.y} r="22" fill="#B49141" opacity="0.15" animate={{ r: [18, 30, 18], opacity: [0.25, 0, 0.25] }} transition={{ repeat: Infinity, duration: 3, delay: i * 0.6 }} />
-                  <circle cx={p.x} cy={p.y} r="6" fill={i === 2 ? '#D4B46A' : '#fff'} />
-                  <text x={p.x} y={p.y + 36} textAnchor="middle" fill="#fff" fontSize="12" letterSpacing="2" fontWeight="700">{s.nodes[i].name}</text>
-                </g>
-              ))}
-            </svg>
-          </Reveal>
-        </div>
+        <Reveal className="mt-12"><TerritoryMap t={t} dark /></Reveal>
+        <Stagger className="mt-12 grid grid-cols-2 gap-5 border-t border-white/10 pt-8 md:grid-cols-4">
+          {s.nodes.map((n, i) => (
+            <Item key={n.name}>
+              <div className="border-l-2 border-gold/50 pl-4">
+                <p className="text-xs tracking-[0.2em] text-gold">{String(i + 1).padStart(2, '0')} · {n.name}</p>
+                <p className="mt-1 text-sm text-white/75">{n.role}</p>
+              </div>
+            </Item>
+          ))}
+        </Stagger>
+        <Reveal delay={0.2}><Link href={withLocale(locale, '/b2b')} className="btn-gold mt-10">{s.cta} <span>→</span></Link></Reveal>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import { Item, Reveal, SectionHead, Stagger } from '@/components/ui';
+import TerritoryMapLazy from '@/components/TerritoryMapLazy';
 import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
@@ -25,6 +26,33 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
               </Item>
             ))}
           </Stagger>
+        </div>
+      </section>
+      <section id="territory" className="bg-ivory-2">
+        <div className="container-x py-20 sm:py-28">
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionHead eyebrow={dict.territory.eyebrow} title={dict.territory.title} body={dict.territory.body} />
+              <Reveal delay={0.2}>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-black/10 bg-white/70">
+                  <table className="w-full text-sm">
+                    <thead><tr className="bg-ink text-left text-[11px] tracking-wider text-gold-light"><th className="px-4 py-2.5">{locale === 'ko' ? '권역' : 'Region'}</th><th className="px-4 py-2.5">{locale === 'ko' ? '국가' : 'Country'}</th><th className="px-4 py-2.5">{locale === 'ko' ? '주요 도시' : 'Key city'}</th></tr></thead>
+                    <tbody>
+                      {dict.territory.regions.flatMap((r) => r.countries.map((c, i) => (
+                        <tr key={c.code} className="border-t border-black/5">
+                          {i === 0 && <td rowSpan={r.countries.length} className="bg-ivory px-4 py-2 align-top text-xs font-bold text-gold-dark">{r.name}</td>}
+                          <td className="px-4 py-2 font-semibold">{c.name}</td>
+                          <td className="px-4 py-2 text-xs text-ink-3">{c.city}</td>
+                        </tr>
+                      )))}
+                    </tbody>
+                  </table>
+                </div>
+              </Reveal>
+            </div>
+            <Reveal className="lg:col-span-8"><TerritoryMapLazy t={dict.territory} hideList /></Reveal>
+          </div>
+          <p className="mt-8 text-xs leading-relaxed text-ink-3/80">{dict.territory.note}</p>
         </div>
       </section>
       <section className="bg-ink text-white">

@@ -81,12 +81,12 @@ export const en: Dict = {
     },
     market: {
       eyebrow: '08 · MARKET', title: 'Asia Distribution & B2B Network',
-      body: 'SOLKERN drives both the Asian distribution of ERMÁK products and a Korean secondary-processing materials business.',
+      body: 'From its Korean hub, SOLKERN distributes ERMÁK finished goods across 12 Asia-Pacific markets while building a Korean secondary-processing materials business.',
       nodes: [
         { name: 'UZBEKISTAN', role: 'Raw materials · ERMÁK production' },
         { name: 'TÜRKİYE', role: 'Fruit ingredients · by-products' },
         { name: 'KOREA', role: 'SOLKERN R&D · processing · distribution' },
-        { name: 'ASIA', role: 'Finished goods · ingredient B2B network' },
+        { name: 'ASIA-PACIFIC 12', role: '12 territory markets · finished goods & ingredients B2B' },
       ],
       cta: 'Partnership inquiry',
     },
@@ -109,7 +109,7 @@ export const en: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: 'We discover good ingredients, build markets, and bring what remains back to life.', body: 'SOLKERN Co., Ltd. connects the natural foods and fruit ingredients of Uzbekistan and Türkiye to Korea and Asia as an ingredient, distribution and R&D company.' },
     statement: 'Origin → Product → Second Life → Market. One continuous flow from Central Asian raw materials to ERMÁK finished goods and Korean secondary-processing materials.',
     identity: [
-      { title: 'Official Asia distributor of ERMÁK', body: 'We introduce the finished goods of ERMÁK, Uzbekistan’s leading natural food brand since 1992, and its juice brand ASIL to Korea and Asia.' },
+      { title: 'Official Asia distributor of ERMÁK', body: 'We introduce the finished goods of ERMÁK, Uzbekistan’s leading natural food brand since 1992, and its juice brand ASIL to Korea and 12 Asia-Pacific markets.' },
       { title: 'Ingredient R&D · Korean processing', body: 'We analyze, process and standardize fruit ingredients and production by-products (peel, seeds, pomace) into food, beauty and industrial materials.' },
       { title: 'Trust finished with data', body: 'Emotion begins in nature; B2B trust is completed with certificates of analysis, certifications and import-standard reviews.' },
     ],
@@ -120,7 +120,7 @@ export const en: Dict = {
     ],
     partners: [
       { name: 'ZAFARXON · ERMÁK', role: 'Production in Uzbekistan', desc: 'ERMAKPLUS LLC · ZAFARHON LLC. Production bases in Tashkent and Jizzakh, ISO · HACCP · HALAL certified lines.' },
-      { name: 'CATKIN Co., Ltd.', role: 'Import & customs partner', desc: 'Holder of ERMÁK distribution rights in Asia. Handles import, customs, quarantine and domestic warehousing.' },
+      { name: 'CATKIN Co., Ltd.', role: 'Import & customs partner', desc: 'Holder of ERMÁK distribution rights for 12 Asia-Pacific markets (Korea, China, Japan, Taiwan, Hong Kong, Mongolia, Vietnam, Thailand, Malaysia, Indonesia, Philippines, Australia). Handles import, customs, quarantine and domestic warehousing.' },
       { name: 'SOLKERN Co., Ltd.', role: 'Sales · R&D · OEM/ODM', desc: 'Product planning, marketing, channel operation, ingredient R&D and OEM/ODM production of CATKIN-developed products.' },
     ],
     info: [
@@ -258,7 +258,7 @@ export const en: Dict = {
       { q: 'What is the minimum order quantity (MOQ)?', a: 'It depends on the item and pack size. Share your target quantity and we will advise item-level MOQ and lead time.' },
       { q: 'Can I receive samples?', a: 'Yes. After a B2B inquiry we agree on sample items and quantities; shipping costs are agreed in advance.' },
       { q: 'Can I buy ingredients (by-products) in small quantities?', a: 'We support small R&D sample purchases, supplied with specifications and test reports.' },
-      { q: 'Do you supply outside Korea?', a: 'Through the official ERMÁK Asia distribution network we work with country partners across Asia.' },
+      { q: 'Do you supply outside Korea?', a: 'Yes. We work with partners in the 12 Asia-Pacific territory markets under the ERMÁK distribution agreement (Korea, China, Japan, Taiwan, Hong Kong, Mongolia, Vietnam, Thailand, Malaysia, Indonesia, Philippines, Australia). The five Central Asian countries are managed directly by ERMÁK headquarters.' },
     ],
     cta: { title: 'Start your B2B conversation', button: 'B2B inquiry' },
   },
@@ -284,6 +284,40 @@ export const en: Dict = {
     info: ko.contact.info,
     officeTitle: 'OFFICE',
     address: '5F 505-J341, 10-20 Jungbong-daero 612beon-gil, Seo-gu, Incheon, Korea (Cheongna Plaza)',
+  },
+  territory: {
+    eyebrow: 'DISTRIBUTION TERRITORY',
+    title: 'Asia-Pacific 12 Markets',
+    body: 'Under the ERMÁK distribution agreement, we supply ERMÁK finished goods to 12 markets across Northeast Asia, Southeast Asia and Oceania, with Korea as our hub.',
+    countLabel: 'Territory markets',
+    regions: [
+      { name: 'Northeast Asia', countries: [
+        { code: 'KR', name: 'Korea', city: 'Incheon · hub' },
+        { code: 'CN', name: 'China', city: 'Beijing' },
+        { code: 'JP', name: 'Japan', city: 'Tokyo' },
+        { code: 'TW', name: 'Taiwan', city: 'Taipei' },
+        { code: 'HK', name: 'Hong Kong', city: 'Hong Kong' },
+        { code: 'MN', name: 'Mongolia', city: 'Ulaanbaatar' },
+      ] },
+      { name: 'Southeast Asia', countries: [
+        { code: 'VN', name: 'Vietnam', city: 'Hanoi' },
+        { code: 'TH', name: 'Thailand', city: 'Bangkok' },
+        { code: 'MY', name: 'Malaysia', city: 'Kuala Lumpur' },
+        { code: 'ID', name: 'Indonesia', city: 'Jakarta' },
+        { code: 'PH', name: 'Philippines', city: 'Manila' },
+      ] },
+      { name: 'Oceania', countries: [{ code: 'AU', name: 'Australia', city: 'Sydney' }] },
+    ],
+    origins: [
+      { code: 'UZ', name: 'Uzbekistan', role: 'ERMÁK production · origin' },
+      { code: 'TR', name: 'Türkiye', role: 'Fruit ingredients · by-products' },
+    ],
+    hub: 'Hub',
+    legendTerritory: '12 territory markets',
+    legendOrigin: 'Origin',
+    legendDirect: 'Central Asia (managed directly by ERMÁK)',
+    note: '* Territory as defined in the ERMÁK distribution agreement. The five Central Asian countries (Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan) are managed directly by ERMÁK headquarters. Country-specific supply terms are available on B2B inquiry.',
+    tapHint: 'Tap a country to highlight it on the map',
   },
   footer: {
     tagline: 'From Origin to New Value',

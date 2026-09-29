@@ -117,12 +117,12 @@ export const ko: Dict = {
     market: {
       eyebrow: '08 · MARKET',
       title: 'Asia Distribution & B2B Network',
-      body: 'SOLKERN은 ERMÁK 완제품의 아시아 유통과 한국 2차 가공 소재 사업을 동시에 추진합니다.',
+      body: 'SOLKERN은 한국을 거점으로 아시아·태평양 12개국에 ERMÁK 완제품을 유통하고, 한국 2차 가공 소재 사업을 함께 추진합니다.',
       nodes: [
         { name: 'UZBEKISTAN', role: '원물 · ERMÁK 생산' },
         { name: 'TÜRKİYE', role: '과일 원료 · 부산물' },
         { name: 'KOREA', role: 'SOLKERN R&D · 2차 가공 · 유통' },
-        { name: 'ASIA', role: '완제품 · 원료 B2B 네트워크' },
+        { name: 'ASIA-PACIFIC 12', role: '판권 12개국 완제품 · 원료 B2B' },
       ],
       cta: '파트너십 문의',
     },
@@ -152,7 +152,7 @@ export const ko: Dict = {
     hero: { eyebrow: 'ABOUT SOLKERN', title: '좋은 원물을 발견하고, 시장을 만들고, 남은 가치까지 다시 살립니다.', body: '㈜솔컨은 우즈베키스탄·튀르키예의 자연친화 식품과 과일 원료를 한국과 아시아 시장에 연결하는 원료·유통·R&D 기업입니다.' },
     statement: 'Origin → Product → Second Life → Market. 중앙아시아 원물에서 ERMÁK 완제품, 그리고 한국 2차 가공 소재 사업까지 하나의 흐름으로 연결합니다.',
     identity: [
-      { title: 'ERMÁK 공식 아시아 총판', body: '1992년부터 이어진 우즈베키스탄 대표 자연 식품 브랜드 ERMÁK과 주스 브랜드 ASIL의 완제품을 한국과 아시아 시장에 소개합니다.' },
+      { title: 'ERMÁK 공식 아시아 총판', body: '1992년부터 이어진 우즈베키스탄 대표 자연 식품 브랜드 ERMÁK과 주스 브랜드 ASIL의 완제품을 한국을 비롯한 아시아·태평양 12개국 시장에 소개합니다.' },
       { title: '원료 R&D · 한국 2차 가공', body: '과일 원료와 제조 부산물(껍질·씨앗·박)을 분석·가공·규격화하여 식품·뷰티·산업 소재로 전환합니다.' },
       { title: '데이터로 마무리하는 신뢰', body: '감성은 자연에서 시작하되, B2B 신뢰는 시험성적서·인증·수입 기준 검토로 마무리합니다.' },
     ],
@@ -163,7 +163,7 @@ export const ko: Dict = {
     ],
     partners: [
       { name: 'ZAFARXON · ERMÁK', role: '우즈베키스탄 생산', desc: 'ERMAKPLUS LLC · ZAFARHON LLC. 타슈켄트·지자흐 생산 거점, ISO·HACCP·HALAL 인증 라인.' },
-      { name: '㈜캣킨 CATKIN', role: '수입 · 통관 파트너', desc: 'ERMÁK 아시아 판권 보유. 수입·통관·검역과 국내 창고 입고를 담당합니다.' },
+      { name: '㈜캣킨 CATKIN', role: '수입 · 통관 파트너', desc: 'ERMÁK 아시아·태평양 12개국 판권 보유(한국·중국·일본·대만·홍콩·몽골·베트남·태국·말레이시아·인도네시아·필리핀·호주). 수입·통관·검역과 국내 창고 입고를 담당합니다.' },
       { name: '㈜솔컨 SOLKERN', role: '판매 · R&D · OEM/ODM', desc: '상품 기획·마케팅·채널 운영과 원료 R&D, 캣킨 개발 상품의 OEM/ODM 생산을 담당합니다.' },
     ],
     info: [
@@ -370,7 +370,7 @@ export const ko: Dict = {
       { q: '최소 주문 수량(MOQ)은 어떻게 되나요?', a: '품목·포장 단위에 따라 다릅니다. 문의 시 희망 수량을 알려주시면 품목별 MOQ와 리드타임을 안내드립니다.' },
       { q: '샘플을 받을 수 있나요?', a: '가능합니다. B2B 문의 후 샘플 품목과 수량을 협의하며, 배송비는 사전 협의합니다.' },
       { q: '원료(부산물)도 소량 구매가 가능한가요?', a: 'R&D 용도의 소량 샘플 구매를 지원합니다. 규격과 시험성적서를 함께 제공합니다.' },
-      { q: '한국 외 국가로도 공급하나요?', a: 'ERMÁK 공식 아시아 총판 네트워크를 통해 아시아 국가별 파트너와 협의합니다.' },
+      { q: '한국 외 국가로도 공급하나요?', a: '네. ERMÁK 총판 계약상 판권 지역인 아시아·태평양 12개국(한국·중국·일본·대만·홍콩·몽골·베트남·태국·말레이시아·인도네시아·필리핀·호주)의 파트너와 협의합니다. 중앙아시아 5개국은 ERMÁK 본사가 직접 관리합니다.' },
     ],
     cta: { title: '지금 B2B 상담을 시작하세요', button: 'B2B 문의하기' },
   },
@@ -400,6 +400,40 @@ export const ko: Dict = {
     ],
     officeTitle: 'OFFICE',
     address: '인천광역시 서구 중봉대로612번길 10-20, 5층 505-제이341호 (청라동, 청라프라자)',
+  },
+  territory: {
+    eyebrow: 'DISTRIBUTION TERRITORY',
+    title: 'Asia-Pacific 12 Markets',
+    body: 'ERMÁK 총판 계약에 따라 한국을 거점으로 동북아·동남아·오세아니아 12개국에 ERMÁK 완제품을 공급합니다.',
+    countLabel: '판권 국가',
+    regions: [
+      { name: '동북아시아', countries: [
+        { code: 'KR', name: '한국', city: '인천 · 운영 거점' },
+        { code: 'CN', name: '중국', city: '베이징' },
+        { code: 'JP', name: '일본', city: '도쿄' },
+        { code: 'TW', name: '대만', city: '타이베이' },
+        { code: 'HK', name: '홍콩', city: '홍콩' },
+        { code: 'MN', name: '몽골', city: '울란바토르' },
+      ] },
+      { name: '동남아시아', countries: [
+        { code: 'VN', name: '베트남', city: '하노이' },
+        { code: 'TH', name: '태국', city: '방콕' },
+        { code: 'MY', name: '말레이시아', city: '쿠알라룸푸르' },
+        { code: 'ID', name: '인도네시아', city: '자카르타' },
+        { code: 'PH', name: '필리핀', city: '마닐라' },
+      ] },
+      { name: '오세아니아', countries: [{ code: 'AU', name: '호주', city: '시드니' }] },
+    ],
+    origins: [
+      { code: 'UZ', name: '우즈베키스탄', role: 'ERMÁK 생산 · 원산지' },
+      { code: 'TR', name: '튀르키예', role: '과일 원료 · 부산물' },
+    ],
+    hub: '운영 거점',
+    legendTerritory: '판권 12개국',
+    legendOrigin: '원산지',
+    legendDirect: '중앙아시아 (ERMÁK 본사 직접 관리)',
+    note: '※ ERMÁK 총판 계약 기준 판권 지역입니다. 중앙아시아 5개국(카자흐스탄·키르기스스탄·타지키스탄·투르크메니스탄·우즈베키스탄)은 ERMÁK 본사가 직접 관리합니다. 국가별 공급 조건은 B2B 문의로 안내드립니다.',
+    tapHint: '국가를 누르면 지도에서 강조됩니다',
   },
   footer: {
     tagline: 'From Origin to New Value',

@@ -33,6 +33,13 @@ export type NewsItem = {
   image?: string;
 };
 
+export type Territory = {
+  eyebrow: string; title: string; body: string; countLabel: string;
+  regions: { name: string; countries: { code: string; name: string; city: string }[] }[];
+  origins: { code: string; name: string; role: string }[];
+  hub: string; legendTerritory: string; legendOrigin: string; legendDirect: string; note: string; tapHint: string;
+};
+
 export type Dict = {
   meta: { title: string; description: string };
   nav: { label: string; href: string }[];
@@ -107,5 +114,6 @@ export type Dict = {
     officeTitle: string;
     address: string;
   };
+  territory: Territory;
   footer: { tagline: string; company: string; ceo: string; regNo: string; address: string; email: string; tel: string; copyright: string; links: { label: string; href: string }[] };
 };
