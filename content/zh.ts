@@ -198,7 +198,7 @@ export const zh: Dict = {
       body: '2008年，成为乌兹别克斯坦首个工业化加工、包装葵花籽，并规模化生产传统发酵乳零食库尔特的品牌。在塔什干与吉扎克生产8大品类产品，并拥有果汁品牌ASIL。',
       facts: [
         { value: '1992', label: '创立' },
-        { value: '350+', label: '员工' },
+        { value: '850+', label: '员工' },
         { value: '8', label: '产品品类' },
         { value: '4', label: '国际认证（ISO 9001·14001·22000·HALAL）' },
       ],

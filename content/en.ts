@@ -157,7 +157,7 @@ export const en: Dict = {
       body: 'In 2008, the first brand in Uzbekistan to process and pack sunflower seeds industrially and to produce the traditional fermented dairy snack qurt at scale. Eight product categories from Tashkent and Jizzakh, alongside the juice brand ASIL.',
       facts: [
         { value: '1992', label: 'Founded' },
-        { value: '350+', label: 'Employees' },
+        { value: '850+', label: 'Employees' },
         { value: '8', label: 'Product categories' },
         { value: '4', label: 'International certifications (ISO 9001·14001·22000·HALAL)' },
       ],
