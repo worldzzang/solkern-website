@@ -101,3 +101,16 @@ Environment는 Production + Preview 체크.
 | 이미지 | `docs/SOLKERN_Image_Prompt_Book_v3.docx` (플레이스홀더 40개, 위치·주석·프롬프트) → `public/images/custom/{ID}.webp` + `lib/placeholders.ts` CUSTOM_READY |
 | 새 문구 | `content/*.ts` 의 `home.daily`, `home.timeline` (4개 언어) — 나머지 문구는 v1과 동일 |
 | 프로덕션 반영 | 확정 시에만: `git checkout main && git merge design-v2 && git push` (사용자 승인 후 진행) |
+
+## [2026-09-30] 디자인 v3 (3차 시안 · 오설록 브랜드스토리 벤치마크) — 임시 링크 운영
+| 항목 | 내용 |
+|---|---|
+| 브랜치 | `design-v3` (design-v2에서 분기) — **main·www.solkern.kr 에는 영향 없음**. 프로덕션 교체는 사용자 승인 후에만 |
+| 임시 링크 | https://project-c2m6o-git-design-v3-worldzzang1-project-001.vercel.app/ko (Preview 배포 · design-v3 push마다 자동 갱신 · /en /ja /zh · 관리자 /admin) |
+| 디자인 | Pretendard 단독(세리프 제거) · 화이트 / 미스트 #F6F5F0 / 딥 포레스트 #1E2F26 · 로고 골드 #B8954A 포인트 · 모서리 16px |
+| 홈 구성 | 히어로(실사진 슬로 줌 슬라이드) → 선언문 → THE SOLKERN WAY 확장 패널 4 → THE LAND 원형 탭 4 + 숫자 → REGIONS 탭 4 → THE FRUIT → COLLECTION 슬라이더 → FEATURED → SECOND LIFE·MATERIAL(다크) → MARKET 지도 → TRUST → SINCE 1992 가로 연혁 → PEOPLE → DAILY 슬라이더 → 더 많은 이야기·문의 |
+| 문구 | `content/*.ts` 확정 문구 그대로 (CEO 박진태 · ERMÁK 아시아 공동진출 공식파트너 · 코키 표기 등). v3에서 문구 변경 없음 |
+| 이미지 | 카탈로그 실사진을 `public/images/photo/`에 추가하고 `lib/placeholders.ts`의 `REAL`로 연결. 남은 슬롯 20개(AI 생성 16 + 실사진 4)는 사이트에 `IMAGE · ID` + 주석으로 표시 → `docs/SOLKERN_Image_Prompt_Book_v4.docx` |
+| 이미지 교체 | `public/images/custom/{ID}.webp` 저장 → `lib/placeholders.ts`의 `CUSTOM_READY`에 ID 추가 → 커밋 |
+| 공지사항 | 관리자 → "공지사항·소식 관리"에서 등록하면 NEWS 페이지와 전 페이지 푸터 NOTICE에 즉시 반영 (`components/NoticeList.tsx`) |
+| 프로덕션 반영 | 확정 시: `git checkout main && git merge design-v3 && git push` → www.solkern.kr 자동 교체 |
