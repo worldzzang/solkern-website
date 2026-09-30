@@ -104,6 +104,24 @@ export const en: Dict = {
       note: '* Certifications are held by the ERMÁK production entities (ERMAKPLUS LLC · ZAFARHON LLC); item-level scope is confirmed on request.',
     },
     contact: { eyebrow: '10 · CONTACT', title: 'Partner with SOLKERN', body: 'Propose finished-goods distribution, ingredient supply, OEM/ODM or collaboration in Korea and Asia.', cta1: 'Contact us', cta2: 'Request catalog' },
+    daily: {
+      eyebrow: 'SOLKERN DAILY',
+      title: 'ERMÁK in Everyday Life',
+      body: 'From the breakfast table to an afternoon glass — moments where the fruit of Uzbekistan settles into a day in Korea.',
+      captions: ['Morning · peanut butter toast', 'Afternoon · a glass of pomegranate juice', 'Tea time · QOQI fruit snack', 'Brunch · yogurt with cherry jam', 'Weekend · trekking with a nut bar', 'Café · ayran and qurt'],
+    },
+    timeline: {
+      eyebrow: 'SINCE 1992',
+      title: 'From the land of origin to Korean technology — a continuing story',
+      items: [
+        { year: '1992', title: 'ERMÁK founded', desc: 'The natural-food brand ERMÁK begins in Tashkent, Uzbekistan.' },
+        { year: '2008', title: 'Factory-processed sunflower seeds · factory-made qurt', desc: 'The first in Uzbekistan to process and pack sunflower seeds in a factory and to produce traditional qurt at scale.' },
+        { year: '2025', title: 'Asia-Pacific 12-market rights for ERMÁK', desc: 'CATKIN Co., Ltd. secures distribution rights for ERMÁK finished goods in 12 Asia-Pacific markets.' },
+        { year: '2026.06', title: 'ERMÁK · ASIL Korean catalog published', desc: 'Korean-language catalog covering 8 ERMÁK categories and ASIL juices and sauces.' },
+        { year: '2026.08', title: 'SOLKERN Co., Ltd. established', desc: 'Founded in Cheongna, Incheon as the official partner for ERMÁK’s joint entry into Asia, starting distribution and ingredient R&D.' },
+        { year: '2026.09', title: 'First pomegranate-peel powder order', desc: 'A 100 kg order of freeze-dried pomegranate-peel powder opens the first MATERIAL LAB project.' },
+      ],
+    },
   },
   solkern: {
     hero: { eyebrow: 'ABOUT SOLKERN', title: 'We discover good ingredients, build markets, and bring what remains back to life.', body: 'SOLKERN Co., Ltd. connects the natural foods and fruit ingredients of Uzbekistan and Türkiye to Korea and Asia as an ingredient, distribution and R&D company.' },

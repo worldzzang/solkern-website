@@ -1,27 +1,31 @@
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
-import { Item, Marquee, ParallaxImg, Placeholder, Reveal, SectionHead, Stagger } from '@/components/ui';
+import { Item, Marquee, Placeholder, Reveal, SectionHead, Stagger } from '@/components/ui';
 import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
+const REGION_IMG = ['REGION-FERGANA', 'REGION-TASHKENT', 'REGION-SAMARKAND', 'REGION-TURKIYE'];
+
+/* ORIGIN — 오설록 "제주의 자연환경" 4챕터(햇빛·토양과 물·과수 문화·제조) → 산지 4곳 → 두 번째 원산지 */
 export default function OriginPage({ params }: { params: { locale: string } }) {
   const { locale, dict } = usePage(params);
   const s = dict.origin;
   return (
     <>
-      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} placeholder="ORIGIN-SUN" />
+      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} placeholder="HERO-VALLEY" />
       <Marquee items={dict.ui.originMarquee} />
 
-      {/* Chapters */}
-      <section className="bg-ivory">
-        <div className="container-x space-y-24 py-20 sm:py-28">
+      {/* Chapters — 사진·텍스트 교차 */}
+      <section className="bg-paper">
+        <div className="container-x space-y-28 py-24 sm:py-32">
           {s.chapters.map((c, i) => (
-            <div key={c.num} className={`grid items-center gap-10 lg:grid-cols-12 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-              <Reveal className="lg:col-span-7"><Placeholder id={c.placeholder} className="aspect-[4/3] rounded-3xl" label={c.note} /></Reveal>
+            <div key={c.num} className={`grid items-center gap-10 lg:grid-cols-12 lg:gap-16 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+              <Reveal className="lg:col-span-7"><Placeholder id={c.placeholder} className="aspect-[4/3] rounded-[4px]" label={c.note} /></Reveal>
               <div className="lg:col-span-5">
-                <Reveal><p className="font-serif text-7xl text-gold/60">{c.num}</p></Reveal>
-                <Reveal delay={0.1}><h2 className="h2 mt-2">{c.title}</h2></Reveal>
-                <Reveal delay={0.2}><p className="lead mt-5">{c.body}</p></Reveal>
+                <Reveal><p className="font-serif text-[64px] leading-none text-gold/70">{c.num}</p></Reveal>
+                <Reveal delay={0.1}><h2 className="t-h2 mt-4">{c.title}</h2></Reveal>
+                <Reveal delay={0.2}><p className="t-lead mt-6">{c.body}</p></Reveal>
+                <Reveal delay={0.25}><span className="mt-8 block h-px w-10 bg-gold" /></Reveal>
               </div>
             </div>
           ))}
@@ -29,19 +33,16 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
       </section>
 
       {/* Regions */}
-      <section className="relative overflow-hidden bg-ink text-white">
-        <ParallaxImg src="/images/bg/apple-press.webp" className="absolute inset-0 opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
-        <div className="container-x relative py-20 sm:py-28">
-          <SectionHead eyebrow="REGIONS" title={dict.ui.sections.originRegions} dark />
-          <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {s.regions.map((r) => (
+      <section className="bg-cream">
+        <div className="container-w py-24 sm:py-32">
+          <SectionHead eyebrow="REGIONS" title={dict.ui.sections.originRegions} />
+          <Stagger className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {s.regions.map((r, i) => (
               <Item key={r.name}>
-                <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-gold/60">
-                  <h3 className="display text-2xl">{r.name}</h3>
-                  <p className="mt-3 text-sm text-white/65">{r.desc}</p>
-                  <div className="mt-5 flex flex-wrap gap-1.5">{r.crops.map((x) => <span key={x} className="rounded-full bg-gold/20 px-2.5 py-0.5 text-[11px] text-gold-light">{x}</span>)}</div>
-                </div>
+                <Placeholder id={REGION_IMG[i]} className="aspect-[4/5] rounded-[4px]" />
+                <h3 className="t-h4 mt-5">{r.name}</h3>
+                <p className="t-body mt-2">{r.desc}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">{r.crops.map((x) => <span key={x} className="rounded-full border border-stone bg-paper px-2.5 py-0.5 text-[11px] text-ink-3">{x}</span>)}</div>
               </Item>
             ))}
           </Stagger>
@@ -49,12 +50,15 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
       </section>
 
       {/* Türkiye */}
-      <section className="bg-ivory-2">
-        <div className="container-x grid items-center gap-10 py-20 sm:py-28 lg:grid-cols-12">
-          <div className="lg:col-span-5"><SectionHead eyebrow="SECOND ORIGIN" title={s.turkiye.title} body={s.turkiye.body} /><Reveal delay={0.2}><Link href={withLocale(locale, '/material-lab')} className="btn-outline-dark mt-8">{dict.common.viewMaterial} →</Link></Reveal></div>
-          <Reveal className="lg:col-span-7"><Placeholder id={s.turkiye.placeholder} className="aspect-[16/10] rounded-3xl" /></Reveal>
+      <section className="bg-paper">
+        <div className="container-x grid items-center gap-10 py-24 sm:py-32 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHead eyebrow="SECOND ORIGIN" title={s.turkiye.title} body={s.turkiye.body} align="left" />
+            <Reveal delay={0.2}><Link href={withLocale(locale, '/material-lab')} className="link-ul mt-8">{dict.common.viewMaterial}</Link></Reveal>
+          </div>
+          <Reveal className="lg:col-span-7"><Placeholder id={s.turkiye.placeholder} className="aspect-[16/10] rounded-[4px]" /></Reveal>
         </div>
-        <div className="container-x pb-10"><p className="text-xs text-ink-3/70">{s.disclaimer}</p></div>
+        <div className="container-x pb-12"><p className="t-small">{s.disclaimer}</p></div>
       </section>
     </>
   );

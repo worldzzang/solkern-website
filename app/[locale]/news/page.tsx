@@ -6,6 +6,7 @@ import type { NewsItem } from '@/content/types';
 
 export const dynamic = 'force-dynamic';
 
+/* NEWS·공지 — 관리자에서 등록한 소식(Blob) + 기본 3건. 오설록 매거진 목록 톤 */
 export default async function NewsPage({ params }: { params: { locale: string } }) {
   const { locale, dict } = usePage(params);
   const s = dict.news;
@@ -16,20 +17,20 @@ export default async function NewsPage({ params }: { params: { locale: string } 
   ];
   return (
     <>
-      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} image="/images/bg/mixnuts.webp" />
-      <section className="bg-ivory">
-        <div className="container-x py-20 sm:py-28">
-          {items.length === 0 && <p className="text-ink-3">{s.empty}</p>}
-          <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} tone="light" />
+      <section className="bg-paper">
+        <div className="container-w pb-24 sm:pb-32">
+          {items.length === 0 && <p className="t-body">{s.empty}</p>}
+          <Stagger className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((n) => (
               <Item key={n.id}>
-                <article className="card group h-full overflow-hidden">
-                  {n.image ? <img src={n.image} alt="" className="aspect-[16/10] w-full object-cover" /> : <Placeholder id={n.placeholder || 'NEWS-OFFICE'} className="aspect-[16/10]" />}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-[11px] tracking-widest"><span className="rounded bg-ink px-2 py-0.5 text-gold-light">{n.category}</span><span className="text-ink-3">{n.date}</span></div>
-                    <h3 className="mt-3 text-lg font-bold leading-snug group-hover:text-gold-dark">{n.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-3">{n.summary}</p>
-                    {n.body && <details className="mt-3 text-sm"><summary className="cursor-pointer text-gold-dark">{dict.common.readMore}</summary><p className="mt-2 whitespace-pre-wrap text-ink-3">{n.body}</p></details>}
+                <article className="group h-full">
+                  {n.image ? <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]"><img src={n.image} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" /></div> : <Placeholder id={n.placeholder || 'NEWS-OFFICE'} className="aspect-[16/10] rounded-[4px]" imgClass="transition duration-[1.4s] group-hover:scale-105" />}
+                  <div className="pt-5">
+                    <p className="text-[11px] tracking-[0.25em] text-gold">{n.category} <span className="mx-2 text-stone">|</span> <span className="text-ink-3">{n.date}</span></p>
+                    <h3 className="t-h4 mt-3 group-hover:text-gold-dark">{n.title}</h3>
+                    <p className="t-body mt-2">{n.summary}</p>
+                    {n.body && <details className="mt-3 text-sm"><summary className="link-ul cursor-pointer !text-[11px]">{dict.common.readMore}</summary><p className="t-body mt-3 whitespace-pre-wrap">{n.body}</p></details>}
                   </div>
                 </article>
               </Item>

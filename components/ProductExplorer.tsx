@@ -2,45 +2,46 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import type { Category } from '@/content/types';
-import { Placeholder } from './ui';
+import { Placeholder, Visual } from './ui';
 import ProductStage from './ProductStage';
 
+/* 제품 탐색 — 오설록 제품 목록 톤: 밑줄 탭 + 카테고리 커버 + 화이트 타일 그리드 */
 export default function ProductExplorer({ categories, note }: { categories: Category[]; note: string }) {
   const [active, setActive] = useState(categories[0].id);
   const cat = categories.find((c) => c.id === active)!;
   return (
     <div>
-      <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
+      <div className="no-scrollbar -mx-5 flex gap-6 overflow-x-auto border-b border-stone px-5 sm:mx-0 sm:flex-wrap sm:px-0">
         {categories.map((c) => (
           <button key={c.id} onClick={() => setActive(c.id)}
-            className={`shrink-0 rounded-full border px-4 py-2 text-xs font-semibold tracking-wider transition ${active === c.id ? 'border-ink bg-ink text-white' : 'border-black/15 bg-white/60 text-ink/70 hover:border-ink'}`}>
+            className={`relative shrink-0 whitespace-nowrap pb-3 text-[13px] tracking-wide transition ${active === c.id ? 'font-semibold text-ink' : 'text-ink-3 hover:text-ink'}`}>
             {c.name}
+            <span className={`absolute inset-x-0 -bottom-px h-[2px] bg-ink transition-all ${active === c.id ? 'opacity-100' : 'opacity-0'}`} />
           </button>
         ))}
       </div>
       <AnimatePresence mode="wait">
-        <motion.div key={cat.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.45 }} className="mt-8">
-          <div className="relative overflow-hidden rounded-3xl bg-ink text-white">
-            {cat.cover ? <img src={cat.cover} alt="" className="absolute inset-0 h-full w-full object-cover opacity-60" /> : <Placeholder id={cat.placeholder || 'HERO-ORCHARD'} className="absolute inset-0" showTag={false} />}
-            <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/60 to-transparent" />
-            <div className="relative p-8 sm:p-12">
-              <span className="rounded-full bg-gold px-3 py-1 text-[10px] font-bold tracking-widest text-white">{cat.brand}</span>
-              <h3 className="display mt-4 text-4xl sm:text-5xl">{cat.name}</h3>
-              <p className="mt-1 text-xs tracking-[0.2em] text-gold-light">{cat.en}</p>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">{cat.desc}</p>
-              <p className="mt-3 text-xs text-gold-light">✦ {cat.point}</p>
+        <motion.div key={cat.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45 }} className="mt-10">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              {cat.cover ? <Visual image={cat.cover} className="aspect-[4/3] rounded-[4px]" /> : <Placeholder id={cat.placeholder || 'HERO-ORCHARD'} className="aspect-[4/3] rounded-[4px]" />}
+            </div>
+            <div className="lg:col-span-7 lg:pl-6">
+              <p className="font-serif text-[12px] tracking-[0.3em] text-gold">{cat.brand} · {cat.en}</p>
+              <h3 className="t-h2 mt-3">{cat.name}</h3>
+              <p className="t-lead mt-5">{cat.desc}</p>
+              <p className="t-small mt-4 text-gold-dark">{cat.point}</p>
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
             {cat.products.map((p, i) => (
-              <motion.div key={p.id} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }} whileHover={{ y: -6 }}
-                className="group card overflow-hidden">
+              <motion.div key={p.id} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }} className="group">
                 {p.image
-                  ? <ProductStage src={p.image} alt={p.name} dark={false} className="aspect-square bg-gradient-to-b from-[#f3ead3] via-ivory to-ivory-2" />
-                  : <div className="aspect-square p-6"><Placeholder id={p.placeholder!} className="h-full w-full rounded-2xl" /></div>}
-                <div className="p-4">
-                  <h4 className="text-sm font-bold sm:text-base">{p.name}</h4>
-                  {p.sub && <p className="mt-0.5 text-xs text-ink-3">{p.sub}</p>}
+                  ? <ProductStage src={p.image} alt={p.name} dark={false} className="aspect-[4/5] rounded-[4px] bg-cream transition duration-500 group-hover:bg-cream-2" />
+                  : <Placeholder id={p.placeholder!} className="aspect-[4/5] rounded-[4px]" />}
+                <div className="pt-4">
+                  <h4 className="text-[15px] font-medium">{p.name}</h4>
+                  {p.sub && <p className="t-small mt-0.5">{p.sub}</p>}
                   {p.sizes && <p className="mt-2 text-[11px] tracking-wide text-gold-dark">{p.sizes}</p>}
                 </div>
               </motion.div>
@@ -48,7 +49,7 @@ export default function ProductExplorer({ categories, note }: { categories: Cate
           </div>
         </motion.div>
       </AnimatePresence>
-      <p className="mt-6 text-xs text-ink-3/70">{note}</p>
+      <p className="t-small mt-10">{note}</p>
     </div>
   );
 }

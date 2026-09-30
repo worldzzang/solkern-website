@@ -60,6 +60,8 @@ export type Dict = {
     market: { eyebrow: string; title: string; body: string; nodes: { name: string; role: string }[]; cta: string };
     trust: { eyebrow: string; title: string; body: string; items: { title: string; desc: string }[]; certs: string[]; cta: string; note: string };
     contact: { eyebrow: string; title: string; body: string; cta1: string; cta2: string };
+    daily: { eyebrow: string; title: string; body: string; captions: string[] };
+    timeline: { eyebrow: string; title: string; items: { year: string; title: string; desc: string }[] };
   };
   solkern: {
     hero: { eyebrow: string; title: string; body: string };

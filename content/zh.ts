@@ -145,6 +145,24 @@ export const zh: Dict = {
       note: '※ 认证由ERMÁK生产法人（ERMAKPLUS LLC · ZAFARHON LLC）持有，各品项的适用范围可应要求确认。',
     },
     contact: { eyebrow: '10 · CONTACT', title: '与SOLKERN携手', body: '欢迎就韩国与亚洲的成品流通、原料供应、OEM/ODM及合作提出建议。', cta1: '联系我们', cta2: '索取目录' },
+    daily: {
+      eyebrow: 'SOLKERN DAILY',
+      title: '日常中的ERMÁK',
+      body: '从早餐桌到午后的一杯。乌兹别克斯坦的果实融入韩国一天的场景。',
+      captions: ['早晨 · 花生酱吐司', '午后 · 一杯石榴汁', '茶点 · QOQI水果零食', '早午餐 · 酸奶配樱桃果酱', '周末 · 徒步与坚果棒', '咖啡馆 · 艾兰与库尔特'],
+    },
+    timeline: {
+      eyebrow: 'SINCE 1992',
+      title: '从原产地的土地到韩国的技术，延续的时间',
+      items: [
+        { year: '1992', title: 'ERMÁK创立', desc: '天然食品品牌ERMÁK在乌兹别克斯坦塔什干起步。' },
+        { year: '2008', title: '葵花籽工厂加工 · 库尔特工厂生产', desc: '乌兹别克斯坦首家在工厂加工、包装葵花籽并规模化生产传统发酵乳库尔特。' },
+        { year: '2025', title: 'ERMÁK亚太12国经销权签约', desc: 'CATKIN公司获得ERMÁK成品在亚太12个市场的经销权。' },
+        { year: '2026.06', title: 'ERMÁK · ASIL韩文目录发行', desc: '发行涵盖ERMÁK 8大品类与ASIL果汁、酱料的韩文目录。' },
+        { year: '2026.08', title: 'SOLKERN成立', desc: '在仁川青罗成立SOLKERN，作为ERMÁK亚洲共同进军官方合作伙伴启动流通与原料研发。' },
+        { year: '2026.09', title: '石榴皮粉首批原料下单', desc: '订购100kg冻干石榴皮粉，MATERIAL LAB首个项目启动。' },
+      ],
+    },
   },
   solkern: {
     hero: { eyebrow: 'ABOUT SOLKERN', title: '发现好原料，开拓市场，让剩余之物重获新生。', body: 'SOLKERN株式会社是一家原料、流通与研发公司，将乌兹别克斯坦与土耳其的天然食品和水果原料连接至韩国与亚洲。' },
