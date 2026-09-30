@@ -87,3 +87,17 @@ Environment는 Production + Preview 체크.
 | OEM/ODM | Original Equipment / Design Manufacturing | 주문자 상표 부착 / 제조자 개발 생산 |
 | COA | Certificate of Analysis | 시험성적서 |
 | MOQ | Minimum Order Quantity | 최소 주문 수량 |
+
+---
+
+## [2026-09-30] 디자인 v2 (오설록 벤치마크) — 임시 링크 운영
+
+| 항목 | 내용 |
+|---|---|
+| 브랜치 | `design-v2` (main·www.solkern.kr 에는 영향 없음) |
+| 임시 링크 | https://project-c2m6o-git-design-v2-worldzzang1-project-001.vercel.app/ko (Preview 배포, push마다 자동 갱신) |
+| 열람 조건 | Vercel 대시보드 → project-c2m6o → Settings → Deployment Protection → **Vercel Authentication = Disabled** (또는 Shareable Link 생성) |
+| 관리자 | 임시 링크 + `/admin` — 기존 프로젝트 환경변수·Blob 저장소 공유 (프리뷰에서 넣은 문의도 실제 목록에 저장됨) |
+| 이미지 | `docs/SOLKERN_Image_Prompt_Book_v3.docx` (플레이스홀더 40개, 위치·주석·프롬프트) → `public/images/custom/{ID}.webp` + `lib/placeholders.ts` CUSTOM_READY |
+| 새 문구 | `content/*.ts` 의 `home.daily`, `home.timeline` (4개 언어) — 나머지 문구는 v1과 동일 |
+| 프로덕션 반영 | 확정 시에만: `git checkout main && git merge design-v2 && git push` (사용자 승인 후 진행) |
