@@ -25,7 +25,7 @@ export default function LangSwitcher({ locale, rest, light, label }: { locale: L
         <span className={`text-[8px] transition-transform ${open ? 'rotate-180' : ''}`}>▼</span>
       </button>
       {open && (
-        <ul role="listbox" className="absolute right-0 top-[calc(100%+10px)] z-50 min-w-[150px] border border-stone bg-white py-1.5 text-ink shadow-[0_14px_36px_rgba(0,0,0,0.10)]">
+        <ul role="listbox" className="absolute right-0 top-[calc(100%+10px)] z-50 min-w-[150px] rounded-xl border border-stone bg-white py-1.5 text-ink shadow-[0_14px_36px_rgba(0,0,0,0.10)]">
           {LOCALES.map((l) => (
             <li key={l} role="option" aria-selected={l === locale}>
               <Link href={withLocale(l, rest)} lang={LOCALE_LABELS[l].html} onClick={() => { remember(l); setOpen(false); }}
@@ -42,12 +42,12 @@ export default function LangSwitcher({ locale, rest, light, label }: { locale: L
 }
 
 /* 모바일 메뉴 · 푸터용 가로 언어 버튼 */
-export function LangRow({ locale, rest, className = '' }: { locale: Locale; rest: string; className?: string }) {
+export function LangRow({ locale, rest, className = '', dark = false }: { locale: Locale; rest: string; className?: string; dark?: boolean }) {
   return (
     <div className={`mt-6 flex flex-wrap gap-2 ${className}`}>
       {LOCALES.map((l) => (
         <Link key={l} href={withLocale(l, rest)} lang={LOCALE_LABELS[l].html} onClick={() => remember(l)}
-          className={`rounded-full border px-4 py-1.5 text-xs transition ${l === locale ? 'border-ink bg-ink text-white' : 'border-stone text-ink/70 hover:border-ink'}`}>
+          className={`rounded-full border px-4 py-1.5 text-xs transition ${dark ? (l === locale ? 'border-white bg-white text-forest' : 'border-white/30 text-white/75 hover:border-white') : (l === locale ? 'border-forest bg-forest text-white' : 'border-stone text-ink/70 hover:border-forest')}`}>
           {LOCALE_LABELS[l].name}
         </Link>
       ))}

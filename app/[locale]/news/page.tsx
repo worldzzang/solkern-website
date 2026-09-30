@@ -19,13 +19,13 @@ export default async function NewsPage({ params }: { params: { locale: string } 
     <>
       <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} tone="light" />
       <section className="bg-paper">
-        <div className="container-w pb-24 sm:pb-32">
+        <div className="container-w py-14 sm:py-20 lg:pb-32">
           {items.length === 0 && <p className="t-body">{s.empty}</p>}
           <Stagger className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((n) => (
               <Item key={n.id}>
                 <article className="group h-full">
-                  {n.image ? <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]"><img src={n.image} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" /></div> : <Placeholder id={n.placeholder || 'NEWS-OFFICE'} className="aspect-[16/10] rounded-[4px]" imgClass="transition duration-[1.4s] group-hover:scale-105" />}
+                  {n.image ? <div className="relative aspect-[16/10] overflow-hidden rounded-2xl"><img src={n.image} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" /></div> : <Placeholder id={n.placeholder || 'NEWS-OFFICE'} className="aspect-[16/10] rounded-2xl" imgClass="transition duration-[1.4s] group-hover:scale-105" />}
                   <div className="pt-5">
                     <p className="text-[11px] tracking-[0.25em] text-gold">{n.category} <span className="mx-2 text-stone">|</span> <span className="text-ink-3">{n.date}</span></p>
                     <h3 className="t-h4 mt-3 group-hover:text-gold-dark">{n.title}</h3>

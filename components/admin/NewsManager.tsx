@@ -3,7 +3,7 @@ import { useState } from 'react';
 import type { NewsPost } from '@/lib/store';
 
 type Form = { id?: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'both'; published: boolean };
-const empty: Form = { date: new Date().toISOString().slice(0, 10), category: 'NEWS', title: '', summary: '', body: '', locale: 'both', published: true };
+const empty: Form = { date: new Date().toISOString().slice(0, 10), category: 'NOTICE', title: '', summary: '', body: '', locale: 'both', published: true };
 
 export default function NewsManager({ initial }: { initial: NewsPost[] }) {
   const [items, setItems] = useState(initial);
@@ -24,10 +24,10 @@ export default function NewsManager({ initial }: { initial: NewsPost[] }) {
   return (
     <div className="grid gap-6 lg:grid-cols-12">
       <form onSubmit={save} className="card space-y-4 bg-white p-6 lg:col-span-5">
-        <h3 className="font-bold">{form.id ? '소식 수정' : '새 소식 작성'}</h3>
+        <h3 className="font-bold">{form.id ? '공지·소식 수정' : '새 공지·소식 작성'}</h3>
         <div className="grid grid-cols-2 gap-3">
           <div><label>날짜</label><input type="date" value={form.date} onChange={(e) => set('date', e.target.value)} /></div>
-          <div><label>카테고리</label><select value={form.category} onChange={(e) => set('category', e.target.value)}>{['NEWS', 'COMPANY', 'PRODUCT', 'R&D', 'CONTRACT', 'EXHIBITION', 'TRIP'].map((c) => <option key={c}>{c}</option>)}</select></div>
+          <div><label>카테고리</label><select value={form.category} onChange={(e) => set('category', e.target.value)}>{['NOTICE', 'NEWS', 'COMPANY', 'PRODUCT', 'R&D', 'CONTRACT', 'EXHIBITION', 'TRIP'].map((c) => <option key={c}>{c}</option>)}</select></div>
         </div>
         <div><label>제목</label><input value={form.title} onChange={(e) => set('title', e.target.value)} required /></div>
         <div><label>요약 (카드에 표시)</label><textarea rows={2} value={form.summary} onChange={(e) => set('summary', e.target.value)} /></div>
@@ -37,10 +37,10 @@ export default function NewsManager({ initial }: { initial: NewsPost[] }) {
           <div><label>공개</label><select value={String(form.published)} onChange={(e) => set('published', e.target.value === 'true')}><option value="true">공개</option><option value="false">비공개(초안)</option></select></div>
         </div>
         <div className="flex gap-2"><button disabled={busy} className="btn-dark !px-5 !py-2 text-xs">{busy ? '저장 중…' : '저장'}</button>{form.id && <button type="button" onClick={() => setForm(empty)} className="btn-outline-dark !px-5 !py-2 text-xs">취소</button>}</div>
-        <p className="text-xs text-ink-3">※ 코드에 내장된 기본 소식 3건은 content/ko.ts · en.ts · ja.ts · zh.ts 에서 수정합니다.</p>
+        <p className="text-xs text-ink-3">※ 저장 즉시 NEWS 페이지와 모든 페이지 하단(푸터) 공지사항에 반영됩니다. 코드에 내장된 기본 소식 3건은 content/ko.ts · en.ts · ja.ts · zh.ts 에서 수정합니다.</p>
       </form>
       <div className="card bg-white p-6 lg:col-span-7">
-        <h3 className="font-bold">등록된 소식 ({items.length})</h3>
+        <h3 className="font-bold">등록된 공지·소식 ({items.length})</h3>
         <ul className="mt-4 divide-y divide-black/5">
           {items.map((p) => (
             <li key={p.id} className="flex items-start justify-between gap-4 py-3">
@@ -48,7 +48,7 @@ export default function NewsManager({ initial }: { initial: NewsPost[] }) {
               <div className="flex shrink-0 gap-3 text-xs"><button onClick={() => setForm({ ...p })} className="text-gold-dark">수정</button><button onClick={() => remove(p.id)} className="text-pome">삭제</button></div>
             </li>
           ))}
-          {items.length === 0 && <li className="py-8 text-center text-sm text-ink-3">등록된 소식이 없습니다.</li>}
+          {items.length === 0 && <li className="py-8 text-center text-sm text-ink-3">등록된 공지·소식이 없습니다.</li>}
         </ul>
       </div>
     </div>

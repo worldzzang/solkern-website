@@ -23,7 +23,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                 <div className="grid grid-cols-[72px_1fr] gap-4 py-4"><span className="text-[10px] font-medium tracking-[0.25em] text-gold">{s.officeTitle}</span><p className="t-body">{s.address}</p></div>
               </div>
             </Reveal>
-            <Reveal delay={0.15}><Placeholder id="CONTACT-OFFICE" className="mt-8 aspect-[4/3] rounded-[4px]" /></Reveal>
+            <Reveal delay={0.15}><Placeholder id="CONTACT-OFFICE" className="mt-8 aspect-[4/3] rounded-2xl" /></Reveal>
             <Reveal delay={0.2}><p className="t-small mt-6">Mon – Fri · 09:00 – 18:00 (KST)</p></Reveal>
           </div>
         </div>

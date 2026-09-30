@@ -20,7 +20,7 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
         <div className="container-x space-y-28 py-24 sm:py-32">
           {s.chapters.map((c, i) => (
             <div key={c.num} className={`grid items-center gap-10 lg:grid-cols-12 lg:gap-16 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-              <Reveal className="lg:col-span-7"><Placeholder id={c.placeholder} className="aspect-[4/3] rounded-[4px]" label={c.note} /></Reveal>
+              <Reveal className="lg:col-span-7"><Placeholder id={c.placeholder} className="aspect-[4/3] rounded-2xl" label={c.note} /></Reveal>
               <div className="lg:col-span-5">
                 <Reveal><p className="font-serif text-[64px] leading-none text-gold/70">{c.num}</p></Reveal>
                 <Reveal delay={0.1}><h2 className="t-h2 mt-4">{c.title}</h2></Reveal>
@@ -39,7 +39,7 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
           <Stagger className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {s.regions.map((r, i) => (
               <Item key={r.name}>
-                <Placeholder id={REGION_IMG[i]} className="aspect-[4/5] rounded-[4px]" />
+                <Placeholder id={REGION_IMG[i]} className="aspect-[4/5] rounded-2xl" />
                 <h3 className="t-h4 mt-5">{r.name}</h3>
                 <p className="t-body mt-2">{r.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">{r.crops.map((x) => <span key={x} className="rounded-full border border-stone bg-paper px-2.5 py-0.5 text-[11px] text-ink-3">{x}</span>)}</div>
@@ -56,7 +56,7 @@ export default function OriginPage({ params }: { params: { locale: string } }) {
             <SectionHead eyebrow="SECOND ORIGIN" title={s.turkiye.title} body={s.turkiye.body} align="left" />
             <Reveal delay={0.2}><Link href={withLocale(locale, '/material-lab')} className="link-ul mt-8">{dict.common.viewMaterial}</Link></Reveal>
           </div>
-          <Reveal className="lg:col-span-7"><Placeholder id={s.turkiye.placeholder} className="aspect-[16/10] rounded-[4px]" /></Reveal>
+          <Reveal className="lg:col-span-7"><Placeholder id={s.turkiye.placeholder} className="aspect-[16/10] rounded-2xl" /></Reveal>
         </div>
         <div className="container-x pb-12"><p className="t-small">{s.disclaimer}</p></div>
       </section>

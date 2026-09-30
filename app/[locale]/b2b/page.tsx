@@ -35,9 +35,9 @@ export default function B2BPage({ params }: { params: { locale: string } }) {
         <div className="container-x py-24 sm:py-32">
           <SectionHead eyebrow={dict.territory.eyebrow} title={dict.territory.title} body={dict.territory.body} />
           <div className="mt-16 grid gap-10 lg:grid-cols-12">
-            <Reveal className="lg:col-span-8"><div className="rounded-[4px] bg-paper p-4 sm:p-8"><TerritoryMapLazy t={dict.territory} hideList /></div></Reveal>
+            <Reveal className="lg:col-span-8"><div className="rounded-2xl bg-paper p-4 sm:p-8"><TerritoryMapLazy t={dict.territory} hideList /></div></Reveal>
             <Reveal delay={0.15} className="lg:col-span-4">
-              <div className="overflow-hidden rounded-[4px] border border-stone bg-paper">
+              <div className="overflow-hidden rounded-2xl border border-stone bg-paper">
                 <table className="w-full text-sm">
                   <thead><tr className="border-b border-stone text-left text-[10px] tracking-[0.2em] text-ink-3"><th className="px-4 py-3 font-medium">{dict.ui.table.region}</th><th className="px-4 py-3 font-medium">{dict.ui.table.country}</th><th className="px-4 py-3 font-medium">{dict.ui.table.city}</th></tr></thead>
                   <tbody>

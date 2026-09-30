@@ -23,7 +23,7 @@ export default function ErmakPage({ params }: { params: { locale: string } }) {
       </section>
 
       {/* New products band */}
-      <section className="relative overflow-hidden bg-ink text-white">
+      <section className="relative overflow-hidden bg-forest text-white">
         <img src="/images/bg/snack-lineup.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
         <div className="container-x relative flex min-h-[70vh] flex-col items-center justify-end pb-20 pt-40 text-center">
@@ -43,7 +43,7 @@ export default function ErmakPage({ params }: { params: { locale: string } }) {
 
       <section className="bg-cream">
         <div className="container-x grid gap-12 py-24 sm:py-32 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <Reveal className="lg:col-span-5"><Visual image="/images/bg/seeds-orange.webp" className="aspect-[4/3] rounded-[4px] lg:aspect-[4/5]" /></Reveal>
+          <Reveal className="lg:col-span-5"><Visual image="/images/bg/seeds-orange.webp" className="aspect-[4/3] rounded-2xl lg:aspect-[4/5]" /></Reveal>
           <div className="lg:col-span-7">
             <SectionHead eyebrow="KOREA" title={s.korea.title} body={s.korea.body} align="left" />
             <Stagger className="mt-10 divide-y divide-stone border-y border-stone">

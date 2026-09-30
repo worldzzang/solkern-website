@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import { Item, Placeholder, Reveal, SectionHead, Stagger } from '@/components/ui';
-import { Founder } from '@/components/home/Sections';
+import { People as Founder } from '@/components/home/Sections';
 import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
@@ -38,7 +38,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
           <Stagger className="mt-16 grid gap-6 lg:grid-cols-3">
             {s.business.map((b, i) => (
               <Item key={b.title}>
-                <div className="h-full rounded-[4px] bg-paper p-8 sm:p-10">
+                <div className="h-full rounded-2xl bg-paper p-8 sm:p-10">
                   <p className="font-serif text-[13px] tracking-[0.3em] text-gold">0{i + 1}</p>
                   <h3 className="t-h3 mt-4">{b.title}</h3>
                   <p className="t-small mt-2">{b.desc}</p>
@@ -55,7 +55,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
         <div className="container-x grid gap-12 py-24 sm:py-32 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHead eyebrow="PARTNERS" title={dict.ui.sections.solkernPartners} align="left" />
-            <Reveal delay={0.2}><Placeholder id="ABOUT-TEAM" className="mt-10 aspect-[4/3] rounded-[4px]" /></Reveal>
+            <Reveal delay={0.2}><Placeholder id="ABOUT-TEAM" className="mt-10 aspect-[4/3] rounded-2xl" /></Reveal>
           </div>
           <Stagger className="divide-y divide-stone border-y border-stone lg:col-span-7">
             {s.partners.map((p, i) => (
@@ -81,7 +81,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
         <div className="container-x grid gap-12 py-24 sm:py-32 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHead eyebrow="COMPANY INFO" title={dict.ui.sections.companyInfo} align="left" />
-            <Reveal delay={0.2}><Placeholder id="PEOPLE-CEO" className="mt-10 aspect-[4/5] max-w-sm rounded-[4px]" /></Reveal>
+            <Reveal delay={0.2}><Placeholder id="PEOPLE-CEO" className="mt-10 aspect-[4/5] max-w-sm rounded-2xl" /></Reveal>
           </div>
           <div className="lg:col-span-7">
             <Reveal>
@@ -91,7 +91,7 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
                 ))}
               </dl>
             </Reveal>
-            <Reveal delay={0.15}><Placeholder id="ABOUT-OFFICE" className="mt-10 aspect-[16/9] rounded-[4px]" /></Reveal>
+            <Reveal delay={0.15}><Placeholder id="ABOUT-OFFICE" className="mt-10 aspect-[16/9] rounded-2xl" /></Reveal>
             <Reveal delay={0.2}><Link href={withLocale(locale, '/contact')} className="link-ul mt-10">{dict.common.contact}</Link></Reveal>
           </div>
         </div>

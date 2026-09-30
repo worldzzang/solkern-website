@@ -23,7 +23,7 @@ export default function ContactForm({ locale, dict }: { locale: Locale; dict: Di
   return (
     <AnimatePresence mode="wait">
       {state === 'done' ? (
-        <motion.div key="done" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-[4px] bg-cream p-12 text-center">
+        <motion.div key="done" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl bg-cream p-12 text-center">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold font-serif text-2xl text-gold">✓</div>
           <h3 className="t-h3 mt-6">{f.success}</h3>
           <p className="t-body mt-3">{f.successBody}</p>

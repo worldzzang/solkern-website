@@ -10,7 +10,7 @@ export default function MaterialLabPage({ params }: { params: { locale: string }
   const s = dict.materialLab;
   return (
     <>
-      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} placeholder="WHY-SECONDLIFE" />
+      <PageHero eyebrow={s.hero.eyebrow} title={s.hero.title} body={s.hero.body} image="/images/photo/pomegranates.webp" imgPos="center 70%" />
 
       <section className="bg-paper">
         <div className="container-x py-24 text-center sm:py-32">
@@ -26,7 +26,7 @@ export default function MaterialLabPage({ params }: { params: { locale: string }
           <SectionHead eyebrow="TRACKS" title={dict.ui.sections.labTracks} />
           {s.tracks.map((t, i) => (
             <div key={t.id} className={`grid items-center gap-10 lg:grid-cols-12 lg:gap-16 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-              <Reveal className="lg:col-span-6"><Placeholder id={t.placeholder} className="aspect-[4/3] rounded-[4px]" /></Reveal>
+              <Reveal className="lg:col-span-6"><Placeholder id={t.placeholder} className="aspect-[4/3] rounded-2xl" /></Reveal>
               <div className="lg:col-span-6">
                 <Reveal><p className="eyebrow">{t.en}</p></Reveal>
                 <Reveal delay={0.1}><h3 className="t-h2 mt-4">{t.title}</h3></Reveal>
@@ -57,7 +57,7 @@ export default function MaterialLabPage({ params }: { params: { locale: string }
         </div>
       </section>
 
-      <section className="bg-ink text-white">
+      <section className="bg-forest text-white">
         <div className="container-x py-24 text-center sm:py-28">
           <Reveal><h2 className="t-h2">{s.cta.title}</h2></Reveal>
           <Reveal delay={0.1}><p className="t-lead mx-auto mt-5 max-w-xl text-white/75">{s.cta.body}</p></Reveal>

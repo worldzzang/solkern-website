@@ -40,7 +40,7 @@ export default function InquiryTable({ initial }: { initial: Inquiry[] }) {
     <div className="card bg-white p-5">
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex gap-1 rounded-full bg-ivory-2 p-1">
-          {(['all', 'new', 'in_progress', 'done'] as const).map((f) => <button key={f} onClick={() => setFilter(f)} className={`rounded-full px-3 py-1 text-xs font-semibold ${filter === f ? 'bg-ink text-white' : 'text-ink-3'}`}>{f === 'all' ? '전체' : STATUS[f].label}</button>)}
+          {(['all', 'new', 'in_progress', 'done'] as const).map((f) => <button key={f} onClick={() => setFilter(f)} className={`rounded-full px-3 py-1 text-xs font-semibold ${filter === f ? 'bg-forest text-white' : 'text-ink-3'}`}>{f === 'all' ? '전체' : STATUS[f].label}</button>)}
         </div>
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="검색 (이름·회사·이메일·품목·내용)" className="!w-64" />
         <button onClick={exportCsv} className="btn-outline-dark !px-4 !py-2 text-xs">CSV 다운로드</button>
@@ -79,7 +79,7 @@ export default function InquiryTable({ initial }: { initial: Inquiry[] }) {
             <p className="mt-4 whitespace-pre-wrap rounded-xl bg-ivory p-4 text-sm">{open.message}</p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <span className="text-xs text-ink-3">상태 변경:</span>
-              {(Object.keys(STATUS) as Inquiry['status'][]).map((s) => <button key={s} onClick={() => update(open.id, { status: s })} className={`rounded-full px-3 py-1 text-xs font-bold ${open.status === s ? 'bg-ink text-white' : 'bg-ivory-2'}`}>{STATUS[s].label}</button>)}
+              {(Object.keys(STATUS) as Inquiry['status'][]).map((s) => <button key={s} onClick={() => update(open.id, { status: s })} className={`rounded-full px-3 py-1 text-xs font-bold ${open.status === s ? 'bg-forest text-white' : 'bg-ivory-2'}`}>{STATUS[s].label}</button>)}
             </div>
             <label className="mt-5">내부 메모</label>
             <textarea rows={3} value={memo} onChange={(e) => setMemo(e.target.value)} />
