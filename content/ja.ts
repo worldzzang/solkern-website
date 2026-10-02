@@ -88,7 +88,7 @@ export const ja: Dict = {
       eyebrow: '03 · THE FRUIT', title: 'One Origin, Many Possibilities',
       body: 'ざくろ、アプリコット、チェリー、りんご、ぶどう、ナッツ。ひとつの原料が製品にも素材にも広がります。',
       items: [
-        { name: 'ざくろ', product: 'ジュース・ジャム・ソース', material: '果皮エキス・種子パウダー', image: '/images/fruits/pomegranate.webp' },
+        { name: 'ざくろ', product: 'ジュース・ジャム・ソース', material: '果皮エキス・種子パウダー', image: '/images/custom/FRUIT-POMEGRANATE.webp' },
         { name: 'りんご', product: 'ジュース・ピューレ', material: '搾りかすファイバー', image: '/images/fruits/apple.webp' },
         { name: 'チェリー', product: 'ジュース・ジャム・ソース', material: '種子スクラブパウダー', image: '/images/fruits/cherry.webp' },
         { name: 'アプリコット', product: 'QOQI・Challpak・ネクター・ジャム', material: '種子・果皮素材', placeholder: 'FRUIT-APRICOT' },

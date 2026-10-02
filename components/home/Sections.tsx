@@ -204,7 +204,7 @@ export function Fruit({ locale, dict }: { locale: Locale; dict: Dict }) {
               <div className="group">
                 <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-paper">
                   {f.image
-                    ? <img src={f.image} alt={f.name} loading="lazy" className="h-[62%] w-[62%] object-contain drop-shadow-[0_18px_22px_rgba(0,0,0,0.16)] transition duration-[1.2s] group-hover:scale-110" />
+                    ? f.image.startsWith('/images/custom/') ? <img src={f.image} alt={f.name} loading="lazy" className="h-full w-full object-cover transition duration-[1.4s] group-hover:scale-105" /> : <img src={f.image} alt={f.name} loading="lazy" className="h-[62%] w-[62%] object-contain drop-shadow-[0_18px_22px_rgba(0,0,0,0.16)] transition duration-[1.2s] group-hover:scale-110" />
                     : <Placeholder id={f.placeholder!} className="h-full w-full" imgClass="transition duration-[1.4s] group-hover:scale-105" />}
                 </div>
                 <h3 className="t-h4 mt-5">{f.name}</h3>

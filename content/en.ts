@@ -47,7 +47,7 @@ export const en: Dict = {
       eyebrow: '03 · THE FRUIT', title: 'One Origin, Many Possibilities',
       body: 'Pomegranate, apricot, cherry, apple, grape, nuts. One ingredient extends into both products and materials.',
       items: [
-        { name: 'Pomegranate', product: 'Juice · jam · sauce', material: 'Peel extract · seed powder', image: '/images/fruits/pomegranate.webp' },
+        { name: 'Pomegranate', product: 'Juice · jam · sauce', material: 'Peel extract · seed powder', image: '/images/custom/FRUIT-POMEGRANATE.webp' },
         { name: 'Apple', product: 'Juice · puree', material: 'Pomace fiber', image: '/images/fruits/apple.webp' },
         { name: 'Cherry', product: 'Juice · jam · sauce', material: 'Seed scrub powder', image: '/images/fruits/cherry.webp' },
         { name: 'Apricot', product: 'QOQI · Challpak · nectar · jam', material: 'Seed & peel materials', placeholder: 'FRUIT-APRICOT' },

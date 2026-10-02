@@ -88,7 +88,7 @@ export const zh: Dict = {
       eyebrow: '03 · THE FRUIT', title: 'One Origin, Many Possibilities',
       body: '石榴、杏、樱桃、苹果、葡萄、坚果。一种原料，可延伸为产品，也可成为原料。',
       items: [
-        { name: '石榴', product: '果汁 · 果酱 · 酱汁', material: '果皮提取物 · 籽粉', image: '/images/fruits/pomegranate.webp' },
+        { name: '石榴', product: '果汁 · 果酱 · 酱汁', material: '果皮提取物 · 籽粉', image: '/images/custom/FRUIT-POMEGRANATE.webp' },
         { name: '苹果', product: '果汁 · 果泥', material: '果渣膳食纤维', image: '/images/fruits/apple.webp' },
         { name: '樱桃', product: '果汁 · 果酱 · 酱汁', material: '果核磨砂粉', image: '/images/fruits/cherry.webp' },
         { name: '杏', product: 'QOQI · Challpak · 果肉饮料 · 果酱', material: '果核 · 果皮原料', placeholder: 'FRUIT-APRICOT' },

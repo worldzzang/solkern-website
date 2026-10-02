@@ -69,7 +69,7 @@ export const ko: Dict = {
       title: 'One Origin, Many Possibilities',
       body: '석류, 살구, 체리, 사과, 포도, 견과. 하나의 원물은 완제품과 소재로 동시에 확장됩니다.',
       items: [
-        { name: '석류', product: '주스 · 잼 · 소스', material: '껍질 추출물 · 씨앗 파우더', image: '/images/fruits/pomegranate.webp' },
+        { name: '석류', product: '주스 · 잼 · 소스', material: '껍질 추출물 · 씨앗 파우더', image: '/images/custom/FRUIT-POMEGRANATE.webp' },
         { name: '사과', product: '주스 · 퓨레', material: '사과박 파이버', image: '/images/fruits/apple.webp' },
         { name: '체리', product: '주스 · 잼 · 소스', material: '씨앗 스크럽 파우더', image: '/images/fruits/cherry.webp' },
         { name: '살구', product: '코키 · Challpak · 넥타 · 잼', material: '씨앗·과피 소재', placeholder: 'FRUIT-APRICOT' },
