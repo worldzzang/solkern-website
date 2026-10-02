@@ -7,7 +7,7 @@
 export const CUSTOM_READY: string[] = [
   'WHY-SECONDLIFE', 'WAY-MARKET', 'ORIGIN-SOIL', 'REGION-FERGANA', 'REGION-TASHKENT', 'REGION-SAMARKAND', 'REGION-TURKIYE', 'ORIGIN-TURKIYE', 'FRUIT-GRAPE', 'MAT-FOOD', 'MAT-INGREDIENT', 'LAB-INDUSTRY', 'DAILY-4', 'DAILY-5', 'DAILY-6', 'CONTACT-OFFICE',
   'MAT-BEAUTY', 'LAB-BEAUTY', 'DAILY-1', 'DAILY-2',
-  'PEOPLE-CEO', 'ABOUT-OFFICE',
+  'ABOUT-OFFICE',
 ];
 
 export const REAL: Record<string, string> = {
@@ -33,7 +33,7 @@ export const REAL: Record<string, string> = {
 };
 
 // 실사진 크롭 기준점(object-position)
-export const REAL_POS: Record<string, string> = { 'PEOPLE-CEO': 'center 15%', 'ABOUT-OFFICE': 'center 60%', 'WAY-PRODUCT': 'center 70%', 'ABOUT-TEAM': 'center 80%' };
+export const REAL_POS: Record<string, string> = { 'ABOUT-OFFICE': 'center 60%', 'WAY-PRODUCT': 'center 70%', 'ABOUT-TEAM': 'center 80%' };
 
 export type PlaceholderSpec = { id: string; mood: string; label: string; ratio?: string };
 

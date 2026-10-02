@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'SOLKERN | From Origin to New Value',
   description: '우즈베키스탄·튀르키예 자연 식품 ERMÁK·ASIL 아시아 공동진출 공식파트너 · 과일 원료·부산물 R&D · 한국 2차 가공',
   icons: { icon: [{ url: '/icon-64.png', sizes: '64x64' }, { url: '/icon-192.png', sizes: '192x192' }], apple: '/icon-192.png' },
-  openGraph: { images: ['/images/logo/solkern-horizontal.png'] },
+  openGraph: { images: [{ url: '/images/og-solkern-v3.jpg', width: 1200, height: 630 }] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

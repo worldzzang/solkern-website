@@ -81,7 +81,6 @@ export default function SolkernPage({ params }: { params: { locale: string } }) 
         <div className="container-x grid gap-12 py-24 sm:py-32 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHead eyebrow="COMPANY INFO" title={dict.ui.sections.companyInfo} align="left" />
-            <Reveal delay={0.2}><Placeholder id="PEOPLE-CEO" className="mt-10 aspect-[3/4] max-w-sm rounded-2xl" /></Reveal>
           </div>
           <div className="lg:col-span-7">
             <Reveal>

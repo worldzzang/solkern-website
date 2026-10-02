@@ -14,7 +14,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return {
     title: d.meta.title, description: d.meta.description,
     alternates: { canonical: `/${params.locale}`, languages: { ko: '/ko', en: '/en', ja: '/ja', 'zh-Hans': '/zh' } },
-    openGraph: { title: d.meta.title, description: d.meta.description, images: ['/images/bg/cover.webp'], locale: LOCALE_LABELS[params.locale as Locale]?.og ?? 'ko_KR', siteName: 'SOLKERN' },
+    openGraph: { title: d.meta.title, description: d.meta.description, images: [{ url: '/images/og-solkern-v3.jpg', width: 1200, height: 630, alt: 'SOLKERN — From Origin to New Value' }], locale: LOCALE_LABELS[params.locale as Locale]?.og ?? 'ko_KR', siteName: 'SOLKERN' },
+    twitter: { card: 'summary_large_image', title: d.meta.title, description: d.meta.description, images: ['/images/og-solkern-v3.jpg'] },
   };
 }
 
