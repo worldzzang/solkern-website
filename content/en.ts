@@ -217,7 +217,7 @@ export const en: Dict = {
           n1: 'Almonds', n2: 'Cashews', n3: 'Sunflower kernels', n4: 'Nut mix',
           q1: 'Bioqurt', q2: 'Qurt (balls)', q3: 'Hot pepper qurt', q4: 'Qurtoba', q5: 'Basil ayran',
           b1: 'Pumpkin seed bar', b2: 'Almond bar', b3: 'Sesame · sunflower bar',
-          o1: 'Salted dry bread rings', o2: 'Stevia & white sesame rings', o3: 'White sesame & black cumin rings', o12: 'Fruit puree',
+          o1: 'Salted dry bread rings', o2: 'Stevia & white sesame rings', o3: 'White sesame & black cumin rings', o12: 'Fruit puree', o13: 'Apple puree', o14: 'Apricot puree', o15: 'Quince puree',
           o4: 'Apricot QOQI', o5: 'Persimmon QOQI', o6: 'Ajwa date QOQI', o7: 'Apricot Challpak (Bargak)', o8: 'Apricot Challpak (Kantek)', o9: 'Cherry Challpak', o10: 'QOQI large pack (apricot)', o11: 'Challpak large pack (cherry)',
           n5: 'Salted nut mix', n6: 'Nut & dried fruit mix', n7: 'Salted pumpkin seeds (in shell)', q6: 'Basil qurt', q8: 'Hard qurt (Toshqurt)', q7: 'Square-shaped basil qurt',
         } as Record<string, string>)[p.id] || p.name,
