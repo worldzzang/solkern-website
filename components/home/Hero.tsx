@@ -9,6 +9,7 @@ import { withLocale } from '@/lib/i18n';
    ※ 추후 산지 영상(mp4)이 확보되면 SLIDES 대신 <video autoPlay muted loop playsInline> 로 교체 (프롬프트북 VIDEO-HERO 참고) */
 const SLIDES = [
   { src: '/images/photo/apricot-orchard.webp', pos: 'center' },
+  { src: '/images/custom/HERO-SUNRISE.webp', pos: 'center' },
   { src: '/images/bg/apple-press.webp', pos: 'center 60%' },
 ];
 const HOLD = 7000;

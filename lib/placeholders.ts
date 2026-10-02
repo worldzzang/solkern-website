@@ -4,7 +4,9 @@
 // 2) CUSTOM_READY: AI 생성/실촬영 이미지를 public/images/custom/{ID}.webp 로 넣은 뒤 여기에 ID를 추가하면 교체됨
 // 3) 그 외       : 사이트에 "IMAGE · ID" 플레이스홀더(주석 포함)로 표시 — 프롬프트는 docs/SOLKERN_Image_Prompt_Book_v4.docx
 // ------------------------------------------------------------------
-export const CUSTOM_READY: string[] = [];
+export const CUSTOM_READY: string[] = [
+  'WHY-SECONDLIFE', 'WAY-MARKET', 'ORIGIN-SOIL', 'REGION-FERGANA', 'REGION-TASHKENT', 'REGION-SAMARKAND', 'REGION-TURKIYE', 'ORIGIN-TURKIYE', 'FRUIT-GRAPE', 'MAT-FOOD', 'MAT-INGREDIENT', 'LAB-INDUSTRY', 'DAILY-4', 'DAILY-5', 'DAILY-6', 'CONTACT-OFFICE',
+];
 
 export const REAL: Record<string, string> = {
   'HERO-VALLEY': '/images/photo/apricot-orchard.webp',
