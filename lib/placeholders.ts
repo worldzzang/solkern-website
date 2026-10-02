@@ -26,7 +26,7 @@ export const REAL: Record<string, string> = {
   'DAILY-2': '/images/bg/splash-pom.webp',
   'DAILY-3': '/images/bg/snack-lineup.webp',
   'ABOUT-TEAM': '/images/photo/ermak-team.webp',
-  'NEWS-POMEGRANATE': '/images/bg/pom-dark.webp',
+  'NEWS-POMEGRANATE': '/images/custom/LAB-BEAUTY.webp',
   'NEWS-CATALOG': '/images/bg/cover.webp',
   'NEWS-OFFICE': '/images/photo/notice-default.webp', // 공지·소식 기본 썸네일(브랜드 그래픽)
 };
