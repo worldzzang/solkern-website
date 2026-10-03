@@ -38,8 +38,8 @@ export default function Hero({ locale, dict }: { locale: Locale; dict: Dict }) {
       </motion.div>
 
       <motion.div style={{ y: textY, opacity: fade }} className="container-x relative z-10 flex h-full flex-col items-center justify-center pt-10 text-center">
-        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.9 }} className="text-[11px] font-medium uppercase tracking-[0.42em] text-white/85 sm:text-[12px]">{eyebrowShort}</motion.p>
-        <h1 className="t-display mt-7">
+        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.9 }} lang="en" className="text-[11px] font-medium uppercase tracking-[0.42em] text-white/85 sm:text-[12px]">{eyebrowShort}</motion.p>
+        <h1 lang="en" className="t-display mt-7">
           <span className="block overflow-hidden"><motion.span className="block" initial={{ y: '105%' }} animate={{ y: 0 }} transition={{ delay: 0.5, duration: 1.3, ease }}>{h.title}</motion.span></span>
           <span className="block overflow-hidden"><motion.span className="block font-normal" initial={{ y: '105%' }} animate={{ y: 0 }} transition={{ delay: 0.68, duration: 1.3, ease }}>{h.titleAccent}</motion.span></span>
         </h1>

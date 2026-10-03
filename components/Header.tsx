@@ -16,7 +16,7 @@ export default function Header({ locale, dict, dark = false }: { locale: Locale;
   useEffect(() => { const f = () => setScrolled(window.scrollY > 24); f(); window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
   useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [open]);
-  const rest = pathname.replace(/^\/(ko|en|ja|zh)(?=\/|$)/, '') || '/';
+  const rest = pathname.replace(/^\/(ko|en|ja|zh|uz|tr)(?=\/|$)/, '') || '/';
   // 크림 배경 히어로 페이지(뉴스·문의·개인정보)는 처음부터 어두운 글자
   const lightHero = ['/news', '/contact', '/privacy'].some((p) => rest.startsWith(p));
   const light = (dark && !lightHero && !scrolled) || open;
@@ -63,7 +63,7 @@ export default function Header({ locale, dict, dark = false }: { locale: Locale;
               ))}
               <LangRow locale={locale} rest={rest} dark />
               <Link href={withLocale(locale, '/contact')} className="btn mt-8 bg-white text-forest">{dict.common.contact}</Link>
-              <p className="mt-10 text-[11px] uppercase tracking-[0.32em] text-white/50">Quality Without Borders</p>
+              <p lang="en" className="mt-10 text-[11px] uppercase tracking-[0.32em] text-white/50">Quality Without Borders</p>
             </div>
           </motion.div>
         )}

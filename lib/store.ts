@@ -14,7 +14,7 @@ export type Inquiry = {
   id: string; createdAt: string; locale: string; name: string; company: string; email: string; phone: string; country: string;
   type: string; product: string; quantity: string; message: string; status: 'new' | 'in_progress' | 'done'; memo?: string; ip?: string;
 };
-export type NewsPost = { id: string; createdAt: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'both'; published: boolean };
+export type NewsPost = { id: string; createdAt: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'uz' | 'tr' | 'both'; published: boolean };
 
 async function readAll<T>(prefix: string): Promise<T[]> {
   if (useBlob()) {

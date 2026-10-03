@@ -1,4 +1,4 @@
-export type Locale = 'ko' | 'en' | 'ja' | 'zh';
+export type Locale = 'ko' | 'en' | 'ja' | 'zh' | 'uz' | 'tr';
 
 export type Product = {
   id: string;

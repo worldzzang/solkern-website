@@ -13,7 +13,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Dict })
       <div className="container-w grid gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <Logo light tagline />
-          <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.32em] text-gold-light">{f.tagline}</p>
+          <p lang="en" className="mt-6 text-[11px] font-medium uppercase tracking-[0.32em] text-gold-light">{f.tagline}</p>
           <p className="mt-5 max-w-sm text-[13px] leading-relaxed text-white/55">{dict.meta.description}</p>
         </div>
         <div className="lg:col-span-3">
