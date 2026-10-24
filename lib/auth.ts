@@ -12,6 +12,6 @@ export function verifyToken(t?: string) {
   if (!timingSafeEqual(Buffer.from(expect), Buffer.from(sig))) return false;
   return Number(p) > Date.now();
 }
-export function isAdmin() { return verifyToken(cookies().get(COOKIE)?.value); }
+export async function isAdmin() { return verifyToken((await cookies()).get(COOKIE)?.value); }
 export function checkPassword(pw: string) { const real = process.env.ADMIN_PASSWORD; return !!real && pw === real; }
 export const ADMIN_COOKIE = COOKIE;

@@ -6,7 +6,7 @@ import InquiryTable from '@/components/admin/InquiryTable';
 export const dynamic = 'force-dynamic';
 
 export default async function AdminHome() {
-  if (!isAdmin()) redirect('/admin/login');
+  if (!(await isAdmin())) redirect('/admin/login');
   const items = await inquiries.list().catch(() => []);
   const stats = { total: items.length, new: items.filter((i) => i.status === 'new').length, prog: items.filter((i) => i.status === 'in_progress').length, done: items.filter((i) => i.status === 'done').length };
   return (

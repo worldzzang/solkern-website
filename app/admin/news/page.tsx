@@ -6,7 +6,7 @@ import NewsManager from '@/components/admin/NewsManager';
 export const dynamic = 'force-dynamic';
 
 export default async function AdminNews() {
-  if (!isAdmin()) redirect('/admin/login');
+  if (!(await isAdmin())) redirect('/admin/login');
   const items = await news.list().catch(() => []);
   return (
     <AdminShell active="news" storage={storageMode()}>

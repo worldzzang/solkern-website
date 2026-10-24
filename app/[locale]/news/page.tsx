@@ -7,8 +7,8 @@ import type { NewsItem } from '@/content/types';
 export const dynamic = 'force-dynamic';
 
 /* NEWS·공지 — 관리자에서 등록한 소식(Blob) + 기본 3건. 오설록 매거진 목록 톤 */
-export default async function NewsPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.news;
   const dynamicPosts = (await news.list().catch(() => [])).filter((p) => p.published && (p.locale === 'both' || p.locale === locale));
   const items: NewsItem[] = [

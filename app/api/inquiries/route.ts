@@ -28,6 +28,6 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  if (!isAdmin()) return NextResponse.json({ ok: false }, { status: 401 });
+  if (!(await isAdmin())) return NextResponse.json({ ok: false }, { status: 401 });
   return NextResponse.json({ ok: true, items: await inquiries.list() });
 }

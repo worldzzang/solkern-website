@@ -5,8 +5,8 @@ import { Placeholder, Reveal } from '@/components/ui';
 import { usePage } from '@/lib/page';
 
 /* CONTACT — 크림 히어로(텍스트) + 밑줄형 폼 + 연락처·오피스 */
-export default function ContactPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.contact;
   return (
     <>

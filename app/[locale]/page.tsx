@@ -6,9 +6,9 @@ import { Statement, Way, Land, Regions, Fruit, Collection, Featured, SecondLife,
 /* 홈(v3) — 오설록 브랜드스토리 흐름을 SOLKERN 서사로 번역
    TEA FROM JEJU(히어로) → 특별함 4패널(THE SOLKERN WAY) → 자연환경 요소 탭(THE LAND) → 차밭 탭(REGIONS)
    → 원물·제품 → Second Life·소재 → 시장·신뢰 → Since 슬라이더 → 사람 → 다다일상(DAILY) → 더 많은 이야기·문의 */
-export default function Home({ params }: { params: { locale: string } }) {
-  if (!isLocale(params.locale)) notFound();
-  const locale = params.locale; const dict = getDict(locale);
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound(); const dict = getDict(locale);
   return (
     <>
       <Hero locale={locale} dict={dict} />

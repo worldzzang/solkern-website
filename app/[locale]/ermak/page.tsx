@@ -6,8 +6,8 @@ import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
 /* ERMÁK — 브랜드 스토리(숫자) → 신제품 밴드 → 제품 탐색 → 한국 런칭 로드맵 → 카탈로그 CTA */
-export default function ErmakPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function ErmakPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.ermak;
   return (
     <>

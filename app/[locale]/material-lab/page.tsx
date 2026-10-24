@@ -5,8 +5,8 @@ import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
 /* MATERIAL LAB — 오설록 "연구 기술" 챕터 톤: 테제 → 3트랙(사진·텍스트 교차) → 5단계 프로세스 → 원칙 → CTA */
-export default function MaterialLabPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function MaterialLabPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.materialLab;
   return (
     <>

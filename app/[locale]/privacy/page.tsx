@@ -1,6 +1,6 @@
 import { usePage } from '@/lib/page';
-export default function Privacy({ params }: { params: { locale: string } }) {
-  const { dict } = usePage(params);
+export default async function Privacy({ params }: { params: Promise<{ locale: string }> }) {
+  const { dict } = await usePage(params);
   const p = dict.ui.privacy;
   return (
     <section className="bg-paper"><div className="container-n py-36 sm:py-44">

@@ -6,8 +6,8 @@ import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
 /* B2B — 오설록 "기업 구매" 톤: 서비스 4 → 판권 지도·표 → 4단계 프로세스 → 서류 → FAQ → CTA */
-export default function B2BPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function B2BPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.b2b;
   return (
     <>

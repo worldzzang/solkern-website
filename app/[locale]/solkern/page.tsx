@@ -6,8 +6,8 @@ import { usePage } from '@/lib/page';
 import { withLocale } from '@/lib/i18n';
 
 /* SOLKERN — 오설록 "브랜드 스토리" 톤: 문장 중심, 여백, 3단 정체성 → 비즈니스 → 3사 협력 → 창립자 어록 → 회사 정보 */
-export default function SolkernPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function SolkernPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.solkern;
   return (
     <>

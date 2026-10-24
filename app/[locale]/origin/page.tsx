@@ -7,8 +7,8 @@ import { withLocale } from '@/lib/i18n';
 const REGION_IMG = ['REGION-FERGANA', 'REGION-TASHKENT', 'REGION-SAMARKAND', 'REGION-TURKIYE'];
 
 /* ORIGIN — 오설록 "제주의 자연환경" 4챕터(햇빛·토양과 물·과수 문화·제조) → 산지 4곳 → 두 번째 원산지 */
-export default function OriginPage({ params }: { params: { locale: string } }) {
-  const { locale, dict } = usePage(params);
+export default async function OriginPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale, dict } = await usePage(params);
   const s = dict.origin;
   return (
     <>
