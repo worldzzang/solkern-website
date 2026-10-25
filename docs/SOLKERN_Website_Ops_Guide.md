@@ -8,8 +8,8 @@
 | 소스코드 | GitHub `worldzzang/solkern-website` (main 브랜치 push → Vercel 자동 재배포) |
 | 호스팅 | Vercel 프로젝트 `project-c2m6o` (이름 변경 권장 → `solkern-website`), 무료 Hobby 플랜 |
 | 공개 URL | https://www.solkern.kr (solkern.kr → www 자동 이동) |
-| 스택 | Next.js 14 · Tailwind · framer-motion · Vercel Blob(문의 저장) |
-| 언어 | 한국어(기본) / 영어 토글 (`/ko`, `/en`) — 영문은 자동 번역본, 네이티브 검수 권장 |
+| 스택 | Next.js 15.5 · React 19 · Tailwind · framer-motion · Vercel Blob(문의·공지 저장) — 2026-10-25 Next 14(EOL)에서 업그레이드 |
+| 언어 | 6개 언어 토글 `/ko` `/en` `/ja` `/zh` `/uz` `/tr` — 한국어 외는 자동 번역본, 네이티브 검수 권장 |
 | 메뉴 | SOLKERN · ORIGIN · ERMÁK · MATERIAL LAB · B2B · NEWS · CONTACT |
 | 관리자 | `/admin` — 문의 목록·상태(신규/진행/완료)·내부 메모·CSV 다운로드, 소식(NEWS) 작성 |
 
@@ -114,3 +114,13 @@ Environment는 Production + Preview 체크.
 | 이미지 교체 | `public/images/custom/{ID}.webp` 저장 → `lib/placeholders.ts`의 `CUSTOM_READY`에 ID 추가 → 커밋 |
 | 공지사항 | 관리자 → "공지사항·소식 관리"에서 등록하면 NEWS 페이지와 전 페이지 푸터 NOTICE에 즉시 반영 (`components/NoticeList.tsx`) |
 | 프로덕션 반영 | 확정 시: `git checkout main && git merge design-v3 && git push` → www.solkern.kr 자동 교체 |
+
+## [2026-10-25] 보안 점검 및 Next.js 15.5 업그레이드 (운영 반영)
+| 항목 | 내용 |
+|---|---|
+| 점검 계기 | PHP 취약점(PHP2Shell, CVE-2026-109618/109619) 보도 → 본 사이트는 PHP 미사용으로 **해당 없음** |
+| 발견 사항 | Next.js 14.2.35가 지원 종료(EOL) 상태 → 미패치 보안 권고 누적 |
+| 조치 | Next.js 15.5.28 · React 19.3으로 업그레이드. Next 15 규칙에 맞춰 `params`·`cookies()`·`headers()` 비동기 처리 (`lib/page.ts`, `lib/auth.ts`, 페이지·API 라우트) |
+| 디자인·문구·이미지 | 변경 없음 |
+| 검증 | 타입체크·빌드 통과, 6개 언어·하위 페이지 전부 200, 관리자 로그인/문의/공지 API 정상, 데스크톱·모바일 스크린샷 회귀 없음, 프리뷰 브랜치 `upgrade-next15` Vercel 빌드 성공 후 main 병합 |
+| 향후 | `@vercel/blob` 차기 버전 출시 시 zod·postcss·undici 의존성 경고(중간 등급) 함께 갱신 권장. Next.js 보안 공지는 https://github.com/vercel/next.js/security/advisories 에서 확인 |
