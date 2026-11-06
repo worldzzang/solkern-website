@@ -10,7 +10,7 @@ export default function NoticeList({ locale, fallback, href, dark = false, limit
   const [items, setItems] = useState<N[]>(fallback.slice(0, limit));
   useEffect(() => {
     let alive = true;
-    fetch('/api/news').then((r) => (r.ok ? r.json() : null)).then((j) => {
+    fetch(`/api/news?t=${Date.now()}`, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((j) => {
       if (!alive || !j?.items) return;
       const posted: N[] = j.items.filter((p: { locale: string }) => p.locale === 'both' || p.locale === locale)
         .map((p: { id: string; date: string; category: string; title: string }) => ({ id: p.id, date: String(p.date).replace(/-/g, '.'), category: p.category, title: p.title }));

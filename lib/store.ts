@@ -1,6 +1,7 @@
 import { del, get, list, put } from '@vercel/blob';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { unstable_noStore as noStore } from 'next/cache';
 
 /**
  * 저장소 추상화 — Vercel Blob(BLOB_READ_WRITE_TOKEN 존재 시) / 로컬 파일(.data/, 개발용)
@@ -17,6 +18,7 @@ export type Inquiry = {
 export type NewsPost = { id: string; createdAt: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'uz' | 'tr' | 'both'; published: boolean };
 
 async function readAll<T>(prefix: string): Promise<T[]> {
+  noStore(); // 관리자 데이터는 절대 캐시하지 않음 (Next 데이터 캐시·정적 렌더링 차단)
   if (useBlob()) {
     const out: T[] = []; let cursor: string | undefined;
     do {
@@ -37,6 +39,7 @@ async function readAll<T>(prefix: string): Promise<T[]> {
   } catch { return []; }
 }
 async function readOne<T>(prefix: string, id: string): Promise<T | null> {
+  noStore();
   if (useBlob()) {
     const g = await get(`${prefix}/${id}.json`, { access: 'private', useCache: false }).catch(() => null);
     if (!g || g.statusCode !== 200) return null;

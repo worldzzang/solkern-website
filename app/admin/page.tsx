@@ -4,6 +4,8 @@ import { inquiries, storageMode } from '@/lib/store';
 import AdminShell from '@/components/admin/AdminShell';
 import InquiryTable from '@/components/admin/InquiryTable';
 export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 
 export default async function AdminHome() {
   if (!(await isAdmin())) redirect('/admin/login');

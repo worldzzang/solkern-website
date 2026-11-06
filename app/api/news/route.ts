@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { news, type NewsPost } from '@/lib/store';
 import { isAdmin } from '@/lib/auth';
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 export async function GET() { const all = await news.list(); return NextResponse.json({ ok: true, items: (await isAdmin()) ? all : all.filter((p) => p.published) }); }
 export async function POST(req: NextRequest) {
   if (!(await isAdmin())) return NextResponse.json({ ok: false }, { status: 401 });

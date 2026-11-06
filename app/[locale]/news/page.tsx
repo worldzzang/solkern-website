@@ -5,6 +5,8 @@ import { news } from '@/lib/store';
 import type { NewsItem } from '@/content/types';
 
 export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 
 /* NEWS·공지 — 관리자에서 등록한 소식(Blob) + 기본 3건. 오설록 매거진 목록 톤 */
 export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {

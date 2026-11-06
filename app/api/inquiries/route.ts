@@ -4,6 +4,9 @@ import { isAdmin } from '@/lib/auth';
 import { notifyInquiry } from '@/lib/notify';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 const rate = new Map<string, number[]>();
 
 export async function POST(req: NextRequest) {

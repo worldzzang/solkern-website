@@ -4,6 +4,8 @@ import { news, storageMode } from '@/lib/store';
 import AdminShell from '@/components/admin/AdminShell';
 import NewsManager from '@/components/admin/NewsManager';
 export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 
 export default async function AdminNews() {
   if (!(await isAdmin())) redirect('/admin/login');
