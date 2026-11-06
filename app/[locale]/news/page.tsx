@@ -14,7 +14,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
   const s = dict.news;
   const dynamicPosts = (await news.list().catch(() => [])).filter((p) => p.published && (p.locale === 'both' || p.locale === locale));
   const items: NewsItem[] = [
-    ...dynamicPosts.map((p) => ({ id: p.id, date: p.date.replace(/-/g, '.').slice(0, 7), category: p.category, title: p.title, summary: p.summary, body: p.body, placeholder: 'NEWS-OFFICE' })),
+    ...dynamicPosts.map((p) => ({ id: p.id, date: p.date.replace(/-/g, '.').slice(0, 7), category: p.category, title: p.title, summary: p.summary, body: p.body, image: p.image, placeholder: 'NEWS-OFFICE' })),
     ...s.items,
   ];
   return (

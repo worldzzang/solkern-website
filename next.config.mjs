@@ -11,7 +11,7 @@ const nextConfig = {
       { key: 'Vercel-CDN-Cache-Control', value: 'no-store' },
     ];
     return [
-      { source: '/api/:path*', headers: noStore },
+      { source: '/api/:path((?!media/).*)', headers: noStore },
       { source: '/admin/:path*', headers: noStore },
       { source: '/:locale(ko|en|ja|zh|uz|tr)/news', headers: noStore },
     ];

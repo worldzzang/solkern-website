@@ -15,7 +15,7 @@ export type Inquiry = {
   id: string; createdAt: string; locale: string; name: string; company: string; email: string; phone: string; country: string;
   type: string; product: string; quantity: string; message: string; status: 'new' | 'in_progress' | 'done'; memo?: string; ip?: string;
 };
-export type NewsPost = { id: string; createdAt: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'uz' | 'tr' | 'both'; published: boolean };
+export type NewsPost = { id: string; createdAt: string; date: string; category: string; title: string; summary: string; body: string; locale: 'ko' | 'en' | 'ja' | 'zh' | 'uz' | 'tr' | 'both'; published: boolean; image?: string };
 
 async function readAll<T>(prefix: string): Promise<T[]> {
   noStore(); // 관리자 데이터는 절대 캐시하지 않음 (Next 데이터 캐시·정적 렌더링 차단)
@@ -71,5 +71,30 @@ export const news = {
   get: (id: string) => readOne<NewsPost>('news', id),
   save: (p: NewsPost) => writeOne('news', p.id, p),
   remove: (id: string) => removeOne('news', id),
+};
+/* 관리자 업로드 이미지 — media/{name} (파일명은 서버가 생성, 변경 불가 → 장기 캐시 가능) */
+export const MEDIA_RE = /^[a-z0-9]{6,40}\.(webp|jpg|png|gif)$/;
+export const MEDIA_URL_RE = /^\/api\/media\/[a-z0-9]{6,40}\.(webp|jpg|png|gif)$/;
+export const media = {
+  async save(name: string, buf: Buffer, contentType: string) {
+    if (useBlob()) { await put(`media/${name}`, buf, { access: 'private', addRandomSuffix: false, contentType }); return; }
+    const dir = path.join(LOCAL, 'media'); await fs.mkdir(dir, { recursive: true }); await fs.writeFile(path.join(dir, name), buf);
+  },
+  async read(name: string): Promise<{ body: ReadableStream<Uint8Array> | Buffer; type: string } | null> {
+    if (!MEDIA_RE.test(name)) return null;
+    const type = ({ webp: 'image/webp', jpg: 'image/jpeg', png: 'image/png', gif: 'image/gif' } as const)[name.split('.').pop() as 'webp'];
+    if (useBlob()) {
+      const g = await get(`media/${name}`, { access: 'private' }).catch(() => null);
+      if (!g || g.statusCode !== 200) return null;
+      return { body: g.stream, type };
+    }
+    try { return { body: await fs.readFile(path.join(LOCAL, 'media', name)), type }; } catch { return null; }
+  },
+  async removeByUrl(url?: string) {
+    if (!url || !MEDIA_URL_RE.test(url)) return;
+    const name = url.split('/').pop()!;
+    if (useBlob()) { await del(`media/${name}`).catch(() => {}); return; }
+    await fs.unlink(path.join(LOCAL, 'media', name)).catch(() => {});
+  },
 };
 export const storageMode = () => (useBlob() ? 'vercel-blob' : 'local-file');
